@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Der Q4-Effekt – Kurz-Report für GaLaBau-Geschäftsführer · GreenCareers</title>
+<style>
+  @font-face{font-family:'Fraunces';src:url('../assets/fonts/fraunces-var.woff2') format('woff2');font-weight:600 700;font-style:normal;}
+  @font-face{font-family:'Fraunces';src:url('../assets/fonts/fraunces-italic.woff2') format('woff2');font-weight:600;font-style:italic;}
+  @font-face{font-family:'Inter';src:url('../assets/fonts/inter-var.woff2') format('woff2');font-weight:400 800;font-style:normal;}
+
+  @page { size: A4 portrait; margin: 0; }
+  @media print {
+    html, body { margin:0 !important; padding:0 !important; background:white !important; width:210mm !important; height:auto !important; }
+    .page { page-break-after: always; break-inside: avoid; margin:0 !important; box-shadow:none !important; width:210mm !important; height:297mm !important; overflow:hidden !important; }
+    .page:last-child { page-break-after: auto; }
+  }
+  :root{
+    --moss:#16351F; --moss-dark:#0E241A; --moss-deep:#0A1710;
+    --poison:#22C55E; --poison-glow:#4ADE80; --lime:#16A34A; --fern:#6EE7A0;
+    --earth:#3F4A42; --ink:#1F1F1F; --white:#fff; --off-white:#F8F7F5; --warm:#F4F2EB; --line:rgba(36,60,36,.10);
+    --serif:'Fraunces',Georgia,serif; --sans:'Inter','Arial',sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--sans);color:var(--earth);background:#ddd;-webkit-font-smoothing:antialiased;line-height:1.5;}
+  .page{width:210mm;height:297mm;background:var(--white);position:relative;overflow:hidden;margin:12px auto;box-shadow:0 4px 30px rgba(0,0,0,.15);}
+  .page-inner{padding:16mm 17mm 22mm 17mm;height:100%;position:relative;}
+  .page-footer{position:absolute;bottom:9mm;left:17mm;right:17mm;display:flex;justify-content:space-between;align-items:center;font-size:7.5pt;color:rgba(63,74,66,.6);font-weight:500;border-top:1px solid var(--line);padding-top:3mm;}
+  .page-footer b{color:var(--moss);font-weight:700;}
+
+  /* Typo */
+  .h1{font-family:var(--serif);font-weight:600;font-size:23pt;line-height:1.1;letter-spacing:-.015em;color:var(--ink);margin-bottom:3.5mm;}
+  .h1 i{font-style:italic;color:var(--lime);}
+  .h2{font-family:var(--serif);font-weight:600;font-size:13.5pt;line-height:1.2;color:var(--ink);margin:5mm 0 2.5mm;letter-spacing:-.01em;}
+  .eyebrow{font-size:7.5pt;font-weight:700;color:var(--lime);letter-spacing:.16em;text-transform:uppercase;margin-bottom:3mm;}
+  .lead{font-size:10.5pt;line-height:1.5;color:var(--earth);margin-bottom:4mm;}
+  .lead strong{color:var(--moss);}
+  .body{font-size:9.2pt;line-height:1.55;color:var(--earth);margin-bottom:3mm;}
+  .body strong{color:var(--moss);font-weight:700;}
+  sup{font-size:6.5pt;color:var(--lime);font-weight:700;vertical-align:super;line-height:0;}
+
+  /* Cover-Header (Seite 1) */
+  .cover-head{position:relative;height:118mm;background:var(--moss-deep);color:var(--white);overflow:hidden;}
+  .cover-head img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%;}
+  .cover-head::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,23,16,.28) 0%,rgba(10,23,16,.55) 45%,rgba(10,23,16,.93) 100%);}
+  .cover-inner{position:absolute;left:17mm;right:17mm;top:12mm;bottom:11mm;z-index:2;display:flex;flex-direction:column;justify-content:space-between;}
+  .cover-top{display:flex;justify-content:space-between;align-items:center;}
+  .cover-logo{height:34px;width:auto;}
+  .cover-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(34,197,94,.18);border:1px solid rgba(34,197,94,.45);color:var(--poison);padding:5px 12px;border-radius:50px;font-size:7.5pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+  .cover-pill::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--poison);}
+  .cover-title{font-family:var(--serif);font-weight:600;font-size:52pt;line-height:.95;letter-spacing:-.025em;}
+  .cover-title i{font-style:italic;color:var(--fern);}
+  .cover-sub{font-family:var(--serif);font-style:italic;font-weight:600;font-size:14pt;line-height:1.3;max-width:140mm;margin-top:5mm;color:rgba(255,255,255,.95);}
+  .cover-meta{display:flex;gap:18px;margin-top:5mm;font-size:8pt;color:rgba(255,255,255,.75);letter-spacing:.06em;text-transform:uppercase;font-weight:600;}
+  .cover-meta b{color:var(--poison);font-family:var(--serif);font-size:12pt;font-style:italic;letter-spacing:0;text-transform:none;margin-right:4px;}
+
+  .p1-body{padding:9mm 17mm 0 17mm;}
+
+  /* Stats */
+  .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4mm;margin:4mm 0 4.5mm;}
+  .stat{background:var(--off-white);border:1px solid var(--line);border-radius:10px;padding:4.5mm 4mm 4mm;}
+  .stat-num{font-family:var(--serif);font-weight:600;font-style:italic;font-size:22pt;line-height:1;color:var(--lime);letter-spacing:-.02em;margin-bottom:2mm;}
+  .stat-label{font-size:8.2pt;line-height:1.35;color:var(--earth);font-weight:500;}
+  .stat-src{font-size:6.8pt;color:rgba(63,74,66,.6);margin-top:2mm;}
+
+  /* Callout */
+  .callout{background:var(--warm);border-left:3px solid var(--lime);padding:4mm 5.5mm;border-radius:0 8px 8px 0;margin:3.5mm 0;}
+  .callout-label{font-size:7.5pt;font-weight:700;color:var(--lime);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.5mm;}
+  .callout-text{font-size:9.4pt;color:var(--moss);line-height:1.5;font-weight:500;}
+  .callout-text strong{color:var(--ink);font-weight:700;}
+
+  /* Mechanismen */
+  .mech{display:grid;grid-template-columns:14mm minmax(0,1fr);gap:0 4mm;padding:3.4mm 0;border-bottom:1px solid var(--line);}
+  .mech:last-of-type{border-bottom:none;}
+  .mech-num{font-family:var(--serif);font-style:italic;font-weight:600;font-size:20pt;line-height:1;color:var(--poison);padding-top:.5mm;}
+  .mech-title{font-weight:800;font-size:10.2pt;color:var(--ink);margin-bottom:1.2mm;line-height:1.3;}
+  .mech-text{font-size:8.9pt;line-height:1.5;color:var(--earth);}
+  .mech-text strong{color:var(--moss);font-weight:700;}
+  .mech-so{font-size:8.9pt;color:var(--moss);font-weight:700;margin-top:1.4mm;}
+  .mech-so::before{content:'→ ';color:var(--lime);}
+
+  /* Dunkle Rechnung */
+  .calc{background:var(--moss);color:var(--white);border-radius:12px;padding:6mm 7mm;margin:4.5mm 0 0;position:relative;overflow:hidden;}
+  .calc-label{font-size:7.5pt;color:rgba(255,255,255,.6);letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:3mm;}
+  .calc-row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:3mm;align-items:center;text-align:center;}
+  .calc-cell b{display:block;font-family:var(--serif);font-style:italic;font-weight:600;font-size:17pt;line-height:1.05;color:var(--poison);letter-spacing:-.01em;}
+  .calc-cell span{display:block;font-size:7.6pt;color:rgba(255,255,255,.78);margin-top:1.5mm;line-height:1.35;}
+  .calc-op{font-family:var(--serif);font-size:18pt;color:rgba(255,255,255,.5);}
+  .calc-note{font-size:8pt;color:rgba(255,255,255,.8);margin-top:3.5mm;line-height:1.45;border-top:1px solid rgba(255,255,255,.14);padding-top:3mm;}
+  .calc-note strong{color:var(--fern);}
+
+  /* Mini-Chart (Indeed-Index) */
+  .chart{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:6mm;align-items:center;margin:2mm 0 4mm;}
+  .bars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4mm;align-items:end;height:38mm;padding-top:6mm;}
+  .bar{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;}
+  .bar .val{font-family:var(--serif);font-style:italic;font-weight:600;font-size:12pt;color:var(--moss);margin-bottom:1.5mm;}
+  .bar .col{width:100%;border-radius:5px 5px 2px 2px;background:linear-gradient(180deg,var(--poison),var(--lime));}
+  .bar.neg .col{background:#D9D5CB;}
+  .bar.neg .val{color:var(--earth);}
+  .bar .lab{font-size:7.4pt;font-weight:700;color:var(--earth);margin-top:2mm;text-align:center;line-height:1.3;}
+  .baseline{border-top:1.5px dashed rgba(63,74,66,.35);position:relative;margin-top:-1px;}
+  .baseline span{position:absolute;right:0;top:1mm;font-size:6.8pt;color:rgba(63,74,66,.6);}
+  .chart-copy{font-size:8.8pt;line-height:1.5;color:var(--earth);}
+  .chart-copy strong{color:var(--moss);}
+
+  /* Fahrplan */
+  .plan{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3.5mm;margin:3.5mm 0 4mm;}
+  .plan-col{background:var(--off-white);border:1px solid var(--line);border-radius:10px;padding:4mm 3.6mm 3.6mm;}
+  .plan-col.peak{background:var(--moss);border-color:var(--moss);color:var(--white);}
+  .plan-mo{font-family:var(--serif);font-style:italic;font-weight:600;font-size:13pt;color:var(--lime);line-height:1;letter-spacing:-.01em;}
+  .plan-col.peak .plan-mo{color:var(--fern);}
+  .plan-goal{font-size:7.6pt;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);margin:1.5mm 0 2.5mm;}
+  .plan-col.peak .plan-goal{color:rgba(255,255,255,.85);}
+  .plan-col ul{list-style:none;}
+  .plan-col li{font-size:7.9pt;line-height:1.42;color:var(--earth);padding-left:3.6mm;position:relative;margin-bottom:1.6mm;}
+  .plan-col li::before{content:'';position:absolute;left:0;top:1.9mm;width:1.8mm;height:1.8mm;border-radius:50%;background:var(--poison);}
+  .plan-col.peak li{color:rgba(255,255,255,.88);}
+
+  .miss{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3.5mm;margin:2.5mm 0 1mm;}
+  .miss div{font-size:8.4pt;line-height:1.45;color:var(--earth);padding:3mm 3.5mm;border:1px dashed rgba(63,74,66,.28);border-radius:8px;}
+  .miss div b{display:block;color:var(--ink);font-weight:800;margin-bottom:.8mm;font-size:8.6pt;}
+
+  /* Schluss / CTA */
+  .closing{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:5mm;align-items:stretch;margin-top:4mm;}
+  .closing-text{font-size:8.9pt;line-height:1.5;color:var(--earth);}
+  .closing-text strong{color:var(--moss);}
+  .cta-box{background:var(--moss-deep);color:var(--white);border-radius:12px;padding:5mm 5.5mm;display:flex;flex-direction:column;justify-content:center;}
+  .cta-box .cta-l{font-size:7.3pt;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--poison);margin-bottom:2mm;}
+  .cta-box .cta-t{font-family:var(--serif);font-weight:600;font-size:12.5pt;line-height:1.2;margin-bottom:2.5mm;}
+  .cta-box .cta-t i{font-style:italic;color:var(--fern);}
+  .cta-box a{display:inline-block;background:linear-gradient(135deg,var(--poison),var(--lime));color:#fff;text-decoration:none;font-weight:800;font-size:8.6pt;padding:2.8mm 4.5mm;border-radius:8px;align-self:flex-start;}
+  .cta-box small{display:block;font-size:6.8pt;color:rgba(255,255,255,.55);margin-top:2.2mm;}
+
+  /* Quellen */
+  .sources{margin-top:4.5mm;padding-top:3mm;border-top:1px solid var(--line);}
+  .sources-label{font-size:7pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:1.5mm;}
+  .sources ol{list-style:none;columns:2;column-gap:6mm;}
+  .sources li{font-size:6.55pt;line-height:1.38;color:rgba(63,74,66,.85);margin-bottom:1mm;padding-left:4.2mm;position:relative;break-inside:avoid;}
+  .sources li b{position:absolute;left:0;color:var(--lime);font-weight:800;}
+  .print-btn{position:fixed;top:20px;right:20px;z-index:1000;background:linear-gradient(135deg,var(--poison),var(--lime));color:#fff;font-weight:700;font-size:12pt;padding:12px 24px;border-radius:50px;border:none;cursor:pointer;font-family:var(--sans);box-shadow:0 4px 20px rgba(34,197,94,.4);}
+  @media print{.print-btn{display:none !important;}}
+</style>
+</head>
+<body>
+<button class="print-btn" onclick="window.print()">📄 Als PDF speichern</button>
+
+<!-- ================= SEITE 1 ================= -->
+<div class="page">
+  <div class="cover-head">
+    <img src="../assets/cover-print.jpg" alt="">
+    <div class="cover-inner">
+      <div class="cover-top">
+        <img class="cover-logo" src="../assets/logo-white.png" alt="GreenCareers">
+        <span class="cover-pill">Kurz-Report · September 2026</span>
+      </div>
+      <div>
+        <div class="cover-title">Der <i>Q4-Effekt.</i></div>
+        <p class="cover-sub">Warum GaLaBau-Betriebe ihre besten Fachkräfte zwischen Oktober und Januar gewinnen – und was bis zum 31. Dezember passieren muss.</p>
+        <div class="cover-meta"><span><b>3</b> Seiten</span><span><b>4</b> Min. Lesezeit</span><span><b>10</b> Quellen</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p1-body">
+    <div class="eyebrow">Für Inhaber und Geschäftsführer im Garten- und Landschaftsbau</div>
+    <p class="lead">Jedes Jahr dasselbe Muster: Von Dezember auf Januar steigt die Arbeitslosigkeit in Deutschland um mehr als 170.000 Menschen – und die Zahl der Bewerbungen um ein Viertel. Beides hängt mit der Winterpause zusammen, beides baut sich im vierten Quartal auf. <strong>Wer das Muster kennt, stellt zum Saisonstart ein. Wer es nicht kennt, sucht bis in den Sommer.</strong></p>
+
+    <div class="stats">
+      <div class="stat"><div class="stat-num">+177.000</div><div class="stat-label">Arbeitslose mehr von Dezember 2025 auf Januar 2026 – „üblich", betrifft laut BA ausdrücklich Außenberufe im Baugewerbe und Gartenbau.<sup>1</sup></div><div class="stat-src">Bundesagentur für Arbeit, Monatsbericht Januar 2026</div></div>
+      <div class="stat"><div class="stat-num">+25 %</div><div class="stat-label">mehr Bewerbungen im Januar 2026 gegenüber Dezember; Suchanfragen sogar +38 % – bei 3 % weniger Stellenanzeigen.<sup>2</sup></div><div class="stat-src">Indeed Hiring Lab, Februar 2026</div></div>
+      <div class="stat"><div class="stat-num">166 Tage</div><div class="stat-label">bleibt eine gemeldete Stelle im Schnitt unbesetzt; fast jede zweite länger als drei Monate.<sup>1</sup> Im Baugewerbe waren es zuletzt 262 Tage.<sup>3</sup></div><div class="stat-src">Bundesagentur für Arbeit, 2024/2026</div></div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Der Q4-Effekt in einem Satz</div>
+      <div class="callout-text">Die Wechselwelle beginnt nicht im Januar. Sie baut sich im vierten Quartal auf – in den Köpfen der Fachkräfte, in den Büros der Betriebe und in den Zahlen der Arbeitsagentur. <strong>Wer im Oktober sichtbar ist, führt die Gespräche, bevor gekündigt wird. Wer im Januar startet, steht in der Schlange.</strong></div>
+    </div>
+
+    <p class="body">Im GreenCareers-Netzwerk zeigt sich seit Jahren das gleiche Bild: Die Wochen um den Jahreswechsel gehören zu den bewerbungsstärksten des Jahres – während in der Hochsaison kaum ein Landschaftsgärtner, Vorarbeiter oder Bauleiter den Betrieb wechselt. Auf den nächsten beiden Seiten stehen die vier Mechanismen dahinter, die Rückwärtsrechnung bis zum Saisonstart 2027 und der Fahrplan für Oktober, November und Dezember.</p>
+  </div>
+
+  <div class="page-footer"><span><b>GreenCareers</b> · Der Q4-Effekt · Kurz-Report 2026</span><span>Seite <b>01</b> / 03</span></div>
+</div>
+
+<!-- ================= SEITE 2 ================= -->
+<div class="page">
+  <div class="page-inner">
+    <div class="eyebrow">Die Mechanik</div>
+    <h1 class="h1">Vier Mechanismen, <i>ein Zeitfenster.</i></h1>
+    <p class="lead">Keiner dieser vier Effekte ist neu – aber sie treffen jedes Jahr zwischen Oktober und Januar zusammen. Genau das macht das vierte Quartal für Betriebe, die suchen, zum wertvollsten Abschnitt im Jahr.</p>
+
+    <div class="mech">
+      <div class="mech-num">01</div>
+      <div>
+        <div class="mech-title">Die Winterpause setzt Fachkräfte frei.</div>
+        <div class="mech-text">Der Garten- und Landschaftsbau gilt per Baubetriebe-Verordnung als Baubetrieb – die Schlechtwetterzeit läuft vom 1.&nbsp;Dezember bis zum 31.&nbsp;März.<sup>4</sup> Im Januar 2024 bezogen knapp 42.000 Baubetriebe für rund 307.000 Beschäftigte Saison-Kurzarbeitergeld; die Alternative dazu ist die Entlassung.<sup>3</sup> Von Dezember auf Januar stieg die Arbeitslosigkeit zuletzt um 177.000 – die BA nennt den Gartenbau ausdrücklich.<sup>1</sup> Jedes Grad Frost im Dezember bedeutet nach IAB-Rechnung rund 34.000 Arbeitslose mehr.<sup>5</sup> Dazu kommen 133 GaLaBau-Insolvenzen im Jahr 2025, fast ein Drittel mehr als im Vorjahr.<sup>6</sup></div>
+        <div class="mech-so">Im Winter sind mehr erfahrene Kräfte am Markt als zu jeder anderen Zeit im Jahr – viele davon nur für wenige Wochen.</div>
+      </div>
+    </div>
+
+    <div class="mech">
+      <div class="mech-num">02</div>
+      <div>
+        <div class="mech-title">Zum Jahreswechsel wird gewechselt.</div>
+        <div class="mech-text">48&nbsp;% der Beschäftigten wollten sich im neuen Jahr einen neuen Job suchen.<sup>7</sup> Grundsätzlich wechselbereit sind aktuell 34&nbsp;%, 8&nbsp;% planen den Wechsel konkret für dieses Jahr.<sup>8</sup> Und der Vorsatz wird umgesetzt: Im Januar 2026 lagen die Suchanfragen 38&nbsp;% und die Bewerbungen 25&nbsp;% über dem Dezember-Niveau – über alle Berufsgruppen hinweg.<sup>2</sup></div>
+        <div class="mech-so">Die Wechsel-Spitze liegt im Januar und Februar. Wer dann erst anfängt, konkurriert mit allen anderen um dieselben Bewerbungen.</div>
+      </div>
+    </div>
+
+    <div class="mech">
+      <div class="mech-num">03</div>
+      <div>
+        <div class="mech-title">Die Entscheidung fällt vor der Kündigung.</div>
+        <div class="mech-text">Inzwischen gehen 52&nbsp;% aller Beendigungen vom Arbeitnehmer aus – 2009 waren es 34&nbsp;%. Und 84&nbsp;% derjenigen, die selbst kündigen, haben zu diesem Zeitpunkt bereits eine neue Stelle in Aussicht oder unterschrieben.<sup>9</sup> Wer im Januar kündigt, hat sich also im Herbst umgesehen – während er noch auf der Baustelle stand.</div>
+        <div class="mech-so">Das entscheidende Gespräch findet im vierten Quartal statt. Entweder mit Ihnen – oder mit einem anderen Betrieb.</div>
+      </div>
+    </div>
+
+    <div class="mech">
+      <div class="mech-num">04</div>
+      <div>
+        <div class="mech-title">Die Konkurrenz um Bewerber ist im Winter am kleinsten.</div>
+        <div class="mech-text">Ende Januar 2026 lagen die Stellenausschreibungen 3&nbsp;% unter dem Dezember-Niveau, die Bewerbungen pro Ausschreibung dagegen 28&nbsp;% darüber.<sup>2</sup> Bundesweit waren im Januar 598.000 Stellen gemeldet, 5,4&nbsp;% weniger als ein Jahr zuvor.<sup>1</sup> Viele Betriebe schieben die Suche auf „nach den Feiertagen" – und lassen das Fenster ungenutzt.</div>
+        <div class="mech-so">Wer im Q4 und über den Jahreswechsel sichtbar bleibt, teilt sich die Aufmerksamkeit der Wechselwilligen mit deutlich weniger Betrieben.</div>
+      </div>
+    </div>
+
+    <div class="calc">
+      <div class="calc-label">Die Rückwärtsrechnung zum Saisonstart 2027</div>
+      <div class="calc-row">
+        <div class="calc-cell"><b>1. April 2027</b><span>Saisonstart – die neue Kraft soll auf der Baustelle stehen</span></div>
+        <div class="calc-op">−</div>
+        <div class="calc-cell"><b>166 Tage</b><span>durchschnittliche Vakanzzeit einer gemeldeten Stelle<sup style="color:var(--fern)">1</sup></span></div>
+        <div class="calc-op">=</div>
+        <div class="calc-cell"><b>17. Oktober 2026</b><span>spätester Start Ihrer Suche – rein rechnerisch, ohne Kündigungsfrist</span></div>
+      </div>
+      <div class="calc-note">Dazu kommt die Kündigungsfrist der neuen Kraft: gesetzlich vier Wochen zum 15. oder Monatsende, unter dem Bundesrahmentarifvertrag GaLaBau in den ersten Jahren kürzer, in vielen Angestelltenverträgen länger.<sup style="color:var(--fern)">10</sup> Mit der Vakanzzeit des Baugewerbes (262 Tage<sup style="color:var(--fern)">3</sup>) läge der Start sogar im Juli. <strong>Wer bis zum 31. Dezember gestartet ist, hat zum Saisonstart realistische Chancen. Wer am 2. Januar anfängt, rechnet statistisch mit Mitte Juni.</strong></div>
+    </div>
+  </div>
+  <div class="page-footer"><span><b>GreenCareers</b> · Der Q4-Effekt · Kurz-Report 2026</span><span>Seite <b>02</b> / 03</span></div>
+</div>
+
+<!-- ================= SEITE 3 ================= -->
+<div class="page">
+  <div class="page-inner">
+    <div class="eyebrow">Die Umsetzung</div>
+    <h1 class="h1">Der Q4-Fahrplan: <i>Oktober bis Januar.</i></h1>
+
+    <div class="chart">
+      <div>
+        <div class="bars">
+          <div class="bar neg"><div class="val">97</div><div class="col" style="height:52%"></div><div class="lab">Stellen-<br>ausschreibungen</div></div>
+          <div class="bar"><div class="val">125</div><div class="col" style="height:78%"></div><div class="lab">Bewerbungen</div></div>
+          <div class="bar"><div class="val">138</div><div class="col" style="height:100%"></div><div class="lab">Suchanfragen</div></div>
+        </div>
+        <div class="baseline"><span>Dezember = 100</span></div>
+      </div>
+      <div class="chart-copy"><strong>Der Januar-Effekt in einer Grafik:</strong> Ende Januar 2026 lagen Suchanfragen und Bewerbungen deutlich über dem Dezember-Niveau, die Zahl der Stellenanzeigen darunter.<sup>2</sup> Mehr Bewerber, weniger Konkurrenz – aber nur für Betriebe, die dann bereits sichtbar sind.</div>
+    </div>
+
+    <div class="plan">
+      <div class="plan-col">
+        <div class="plan-mo">Oktober</div>
+        <div class="plan-goal">Sichtbar werden</div>
+        <ul>
+          <li>Anforderungsprofil und Gehaltsrahmen festlegen – bevor der erste Wechselwillige anruft</li>
+          <li>Stelle dort sichtbar machen, wo Beschäftigte jetzt schon schauen: Empfehlungen, Branchennetzwerke – nicht nur Portale</li>
+          <li>Rückmeldung innerhalb von 24 Stunden – wer noch arbeitet, wartet nicht zwei Wochen</li>
+          <li>Gespräche am Abend oder Samstag ermöglichen</li>
+        </ul>
+      </div>
+      <div class="plan-col">
+        <div class="plan-mo">November</div>
+        <div class="plan-goal">Gespräche führen</div>
+        <ul>
+          <li>Erstgespräche kurz und konkret: Aufgaben, Kolonne, Maschinen, Gehalt</li>
+          <li>Probearbeitstag anbieten – im November leichter zu organisieren als im Mai</li>
+          <li>Angebot mit klarem Starttermin, auch Winterstart mit Winterdienst oder Werkstatt</li>
+        </ul>
+      </div>
+      <div class="plan-col">
+        <div class="plan-mo">Dezember</div>
+        <div class="plan-goal">Zusagen sichern</div>
+        <ul>
+          <li>Verträge vor Weihnachten unterschreiben – nach den Feiertagen bewegt sich der Markt</li>
+          <li>Stelle über die Feiertage aktiv lassen: Die Januar-Suche beginnt am 1. Januar, nicht am 7.</li>
+          <li>Start vorbereiten: Ansprechpartner, erste Woche, Ausrüstung</li>
+        </ul>
+      </div>
+      <div class="plan-col peak">
+        <div class="plan-mo">Januar / Februar</div>
+        <div class="plan-goal">Die Spitze abfangen</div>
+        <ul>
+          <li>Jetzt kommen die meisten Bewerbungen des Jahres – Reaktionszeit entscheidet</li>
+          <li>Wer im Q4 vorbereitet hat, wählt aus. Wer jetzt startet, sucht bis in den Sommer.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="h2">Warum die meisten Betriebe das Fenster verpassen</h2>
+    <div class="miss">
+      <div><b>Im Oktober</b> läuft die Saison noch. Personal ist ein Thema für „danach" – dabei sehen sich die Wechselwilligen genau jetzt um.</div>
+      <div><b>Im Dezember</b> wird auf „nach den Feiertagen" vertagt. Das ist der Moment, in dem Zusagen fallen – bei anderen.</div>
+      <div><b>Im Januar</b> starten alle gleichzeitig. Wer erst jetzt sichtbar wird, konkurriert mit dem ganzen Markt um dieselben Bewerbungen.</div>
+    </div>
+
+    <div class="closing">
+      <div class="closing-text">
+        <strong>Was Sie mit diesen Zahlen jetzt anfangen können:</strong> Legen Sie in den nächsten zwei Wochen fest, wen Sie zum Saisonstart 2027 brauchen, und machen Sie diese Stelle im Oktober sichtbar – dort, wo Fachkräfte hinschauen, die noch nicht gekündigt haben. Alles Weitere ergibt sich aus dem Fahrplan oben. Wenn Sie den Q4-Fahrplan nicht allein durchgehen möchten: GreenCareers ist das spezialisierte Karrierenetzwerk für die grüne Branche und bringt Betriebe mit Fachkräften zusammen, die auf den großen Portalen nicht zu finden sind – in einem kostenlosen Erstgespräch sehen wir gemeinsam, wie das Zeitfenster für Ihren Betrieb konkret aussieht.
+      </div>
+      <div class="cta-box">
+        <div class="cta-l">Kostenloses Erstgespräch</div>
+        <div class="cta-t">Das Q4-Fenster <i>für Ihren Betrieb.</i></div>
+        <a href="https://beratung-galabau.green-careers.de/?utm_source=q4-effekt&utm_medium=pdf&utm_campaign=q4-effekt-2026">beratung-galabau.green-careers.de →</a>
+        <small>30 Minuten · unverbindlich · für GaLaBau-Betriebe</small>
+      </div>
+    </div>
+
+    <div class="sources">
+      <div class="sources-label">Quellen</div>
+      <ol>
+        <li><b>1</b>Bundesagentur für Arbeit: Monatsbericht zum Arbeits- und Ausbildungsmarkt, Januar 2026 (Arbeitslosigkeit Dez.→Jan. +177.000; abgeschlossene Vakanzzeit 166 Tage, gleitende Jahressumme; 49 % der Stellen > 3 Monate vakant; 598.000 gemeldete Stellen).</li>
+        <li><b>2</b>Indeed Hiring Lab Deutschland: „Mehr Bewerbungen bei weniger Stellen", 16.02.2026 (Index Dezember 1.–15. = 100; Bewerbungen +25 %, Suchanfragen +38 %, Stellen −3 %, Bewerbungen je Ausschreibung +28 %).</li>
+        <li><b>3</b>Bundesagentur für Arbeit: Blickpunkt Arbeitsmarkt – Arbeitsmarktsituation in der Bauwirtschaft, August 2024 (Saison-KuG Januar 2024: ca. 42.000 Betriebe / 307.000 Beschäftigte; Vakanzzeit Baugewerbe 2023: 262 Tage).</li>
+        <li><b>4</b>§ 101 SGB III (Schlechtwetterzeit 1.12.–31.3.); Baubetriebe-Verordnung § 1 Abs. 4 (Garten- und Landschaftsbau), gesetze-im-internet.de.</li>
+        <li><b>5</b>IAB-Kurzbericht 2/2015: „Frost und Schnee – Wie das Wetter den Arbeitsmarkt beeinflusst" (Dezember: ca. +34.000 Arbeitslose je Grad unter 0,8 °C).</li>
+        <li><b>6</b>Bundesverband Garten-, Landschafts- und Sportplatzbau (BGL): Branchenstatistik 2025, Pressemitteilung 27.02.2026 (133 Insolvenzen 2025, Vorjahr 101; 131.746 Beschäftigte; 19.898 Betriebe).</li>
+        <li><b>7</b>The Stepstone Group: Pressemitteilung 17.12.2024 (Befragung von rund 8.600 Beschäftigten, November 2024: 48 % wollen im neuen Jahr einen neuen Job suchen).</li>
+        <li><b>8</b>XING / forsa: Wechselbereitschaftsstudie 2026 (Erhebung Dez. 2025–Jan. 2026, n = 3.418; 34 % wechselbereit, 8 % konkret), zitiert nach Haufe, 09.02.2026.</li>
+        <li><b>9</b>Institut der deutschen Wirtschaft (IW), H. Schäfer: „Arbeitnehmer kündigen zunehmend selbst", 22.04.2025 (Anteil Eigenkündigungen 34 % → 52 %; 84 % mit neuer Stelle in Aussicht; Basis SOEP).</li>
+        <li><b>10</b>§ 622 BGB (Grundkündigungsfrist vier Wochen zum 15. oder Monatsende); Bundesrahmentarifvertrag für gewerbliche Arbeitnehmer im Garten-, Landschafts- und Sportplatzbau, § 15 (allgemeinverbindlich).</li>
+      </ol>
+    </div>
+  </div>
+  <div class="page-footer"><span><b>GreenCareers</b> · Der Q4-Effekt · Kurz-Report 2026 · green-careers.de</span><span>Seite <b>03</b> / 03</span></div>
+</div>
+</body>
+</html>

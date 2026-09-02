@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <title>Der Q4-Effekt – Kurz-Report für GaLaBau-Geschäftsführer | GreenCareers</title>
+  <meta name="description" content="Der Q4-Effekt: Warum GaLaBau-Betriebe ihre besten Fachkräfte zwischen Oktober und Januar gewinnen – und was bis zum 31. Dezember passieren muss. 3 Seiten, kostenlos als PDF.">
+  <meta property="og:title" content="Der Q4-Effekt – Kurz-Report für GaLaBau-Geschäftsführer">
+  <meta property="og:description" content="Warum die nächsten 90 Tage über Ihre Mannschaft 2027 entscheiden. 3 Seiten, 4 Minuten, kostenlos.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://q4-effekt.green-careers.de/assets/preview.png">
+  <link rel="icon" type="image/png" href="assets/favicon-32.png">
+
+  <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+
+  <style>
+    /* ===== Fonts (self-hosted, latin subsets – identisch zur Report-LP) ===== */
+    @font-face{font-family:'Fraunces';src:url('assets/fonts/fraunces-var.woff2') format('woff2');font-weight:600 700;font-style:normal;font-display:swap;}
+    @font-face{font-family:'Fraunces';src:url('assets/fonts/fraunces-italic.woff2') format('woff2');font-weight:600;font-style:italic;font-display:swap;}
+    @font-face{font-family:'Inter';src:url('assets/fonts/inter-var.woff2') format('woff2');font-weight:400 800;font-style:normal;font-display:swap;}
+
+    :root{
+      --bg:#0A1710;
+      --bg-2:#0D1F15;
+      --card:#122A1C;
+      --paper:#F4F2EB;
+      --paper-2:#FBFAF7;
+      --ink:#F4F1E8;
+      --ink-dim:rgba(244,241,232,.70);
+      --ink-faint:rgba(244,241,232,.45);
+      --q-ink:#0B1F14;
+      --q-dim:#4B5A50;
+      --q-faint:#8A958D;
+      --green:#16A34A;
+      --green-deep:#15803D;
+      --green-bright:#22C55E;
+      --mint:#6EE7A0;
+      --line:rgba(244,241,232,.10);
+      --line-light:#E5E1D6;
+      --radius:22px;
+      --shadow:0 24px 60px -18px rgba(0,0,0,.55);
+      --font-serif:'Fraunces',Georgia,serif;
+      --font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    body{font-family:var(--font-sans);background:var(--paper);color:var(--q-ink);line-height:1.65;font-size:16px;overflow-x:hidden;}
+    img{max-width:100%;display:block;}
+    a{color:inherit;}
+    .container{max-width:1140px;margin:0 auto;padding:0 20px;}
+    .serif{font-family:var(--font-serif);}
+    em.accent{font-family:var(--font-serif);font-style:italic;font-weight:600;}
+    .sec-dark{background:var(--bg);color:var(--ink);}
+    .sec-dark em.accent{color:var(--mint);}
+    .sec-light{background:var(--paper);color:var(--q-ink);}
+    .sec-light em.accent{color:var(--green-deep);}
+
+    /* ===== Reveal / Motion ===== */
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease;}
+    .reveal.in{opacity:1;transform:none;}
+    .rise{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;}
+    .rise.d1{animation-delay:.08s}.rise.d2{animation-delay:.18s}.rise.d3{animation-delay:.28s}.rise.d4{animation-delay:.40s}.rise.d5{animation-delay:.52s}
+    @keyframes rise{to{opacity:1;transform:none;}}
+    @media (prefers-reduced-motion: reduce){
+      .reveal,.rise{opacity:1;transform:none;transition:none;animation:none;}
+      html{scroll-behavior:auto;}
+      .marquee-track,.leaf,.fan-float,.dot{animation:none !important;}
+    }
+
+    /* ===== Topbar ===== */
+    .topbar{position:absolute;top:0;left:0;right:0;z-index:20;padding:14px 0;}
+    .topbar .container{display:flex;align-items:center;justify-content:center;}
+    .topbar img{height:30px;width:auto;}
+    @media(min-width:1024px){.topbar{padding:18px 0;}.topbar img{height:36px;}}
+
+    /* ===== Hero ===== */
+    .hero{position:relative;padding:66px 0 44px;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;background:
+      radial-gradient(110% 60% at 90% -10%,rgba(34,197,94,.18),transparent 60%),
+      radial-gradient(80% 50% at -10% 55%,rgba(22,101,52,.28),transparent 60%),
+      linear-gradient(175deg,#10281B 0%,var(--bg) 62%);}
+    /* fallende Blätter – dezent, nur Deko */
+    .leaf{position:absolute;top:-30px;width:14px;height:14px;border-radius:14px 0 14px 0;background:linear-gradient(135deg,rgba(110,231,160,.35),rgba(22,163,74,.12));opacity:0;animation:leafFall linear infinite;pointer-events:none;}
+    @keyframes leafFall{0%{transform:translateY(-30px) rotate(0deg);opacity:0;}8%{opacity:.7;}92%{opacity:.5;}100%{transform:translateY(110vh) rotate(420deg);opacity:0;}}
+    .hero .container{position:relative;z-index:2;display:grid;gap:24px;width:100%;grid-template-columns:minmax(0,1fr);}
+    @media(min-width:1024px){
+      .hero{padding:124px 0 84px;min-height:100svh;display:flex;align-items:center;}
+      .hero .container{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:center;}
+    }
+    .hero-badge{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(110,231,160,.35);background:rgba(22,163,74,.14);color:#C9F2D6;border-radius:999px;padding:8px 15px;font-size:.78rem;font-weight:600;letter-spacing:.02em;backdrop-filter:blur(4px);}
+    .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--green-bright);box-shadow:0 0 0 0 rgba(34,197,94,.5);animation:pulse 2.2s infinite;}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.45);}70%{box-shadow:0 0 0 9px rgba(34,197,94,0);}100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}}
+
+    .hero-kicker{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);margin:18px 0 8px;}
+    .hero h1{font-family:var(--font-serif);font-weight:600;font-size:clamp(3.1rem,13vw,6.4rem);line-height:.98;letter-spacing:-.025em;color:var(--ink);}
+    .hero h1 .q4{color:var(--mint);font-style:italic;}
+    .hero-sub{font-family:var(--font-serif);font-style:italic;font-weight:600;font-size:clamp(1.12rem,3.6vw,1.5rem);line-height:1.35;color:var(--ink);margin-top:14px;max-width:24em;}
+    .hero-sub b{font-style:normal;color:var(--mint);font-weight:600;}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+    .hero-chip{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:var(--ink-dim);background:rgba(10,23,16,.45);border:1px solid var(--line);border-radius:999px;padding:7px 13px;backdrop-filter:blur(6px);}
+    .hero-chip b{color:var(--ink);}
+    .hero-chip.cd b{font-family:var(--font-serif);font-size:.98rem;color:var(--mint);font-style:italic;}
+    @media(max-width:1023px){.hero-copy{text-align:center;}.hero-sub{margin-left:auto;margin-right:auto;}.hero-chips{justify-content:center;}}
+
+    /* ===== Fächer-Mockup (Dreiseiter) – nur Desktop im Hero, mobil im Curiosity-Block ===== */
+    .fan-wrap{display:none;}
+    @media(min-width:1024px){.fan-wrap{display:flex;justify-content:flex-start;margin-top:34px;}}
+    .fan{position:relative;width:250px;height:190px;}
+    .fan-float{animation:fanFloat 6s ease-in-out infinite;}
+    @keyframes fanFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+    .sheet{position:absolute;left:0;top:0;width:132px;height:182px;border-radius:4px;background:#FBFAF7;box-shadow:8px 8px 26px rgba(0,0,0,.35);transform-origin:left bottom;overflow:hidden;}
+    .sheet svg{position:absolute;inset:0;width:100%;height:100%;}
+    .sheet.s3{transform:rotate(16deg) translateX(10px);z-index:1;filter:brightness(.96);}
+    .sheet.s2{transform:rotate(8deg) translateX(5px);z-index:2;}
+    .sheet.s1{z-index:3;background:linear-gradient(160deg,#10281B 0%,#153122 40%,#1C4029 100%);color:var(--ink);padding:14px 13px;display:flex;flex-direction:column;justify-content:space-between;}
+    .sheet.s1::after{content:'';position:absolute;inset:7px;border:1px solid rgba(110,231,160,.22);border-radius:3px;pointer-events:none;}
+    .sheet .s-logo{height:12px;width:auto;opacity:.95;}
+    .sheet .s-eyebrow{font-size:.42rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mint);margin-bottom:5px;}
+    .sheet .s-title{font-family:var(--font-serif);font-size:1.05rem;line-height:1.05;letter-spacing:-.01em;}
+    .sheet .s-title i{color:var(--mint);}
+    .sheet .s-foot{font-size:.4rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,241,232,.55);}
+    .fan-tag{position:absolute;right:-6px;top:-12px;background:linear-gradient(135deg,var(--green-bright),var(--green-deep));color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;border-radius:8px;padding:6px 9px;transform:rotate(6deg);box-shadow:0 8px 18px rgba(0,0,0,.35);z-index:5;}
+
+    /* ===== Quiz Card ===== */
+    .quiz-card{background:#fff;color:var(--q-ink);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 18px 18px;position:relative;}
+    @media(min-width:1024px){.quiz-card{padding:28px 28px 24px;}}
+    .quiz-head{display:flex;align-items:center;gap:13px;padding-bottom:14px;border-bottom:1px solid #EAE7DE;margin-bottom:14px;}
+    .quiz-card.quiz-started .quiz-head{display:none;}
+    .mini-cover{width:44px;height:60px;border-radius:5px;flex:none;background:linear-gradient(160deg,#10281B 0%,#153122 40%,#1C4029 100%);box-shadow:0 6px 16px rgba(11,31,20,.28);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;}
+    .mini-cover span{font-family:var(--font-serif);font-style:italic;color:var(--mint);font-size:.95rem;line-height:1;}
+    .mini-cover small{font-size:.36rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,241,232,.7);}
+    .quiz-head-titles{flex:1;min-width:0;}
+    .quiz-head-titles .t1{font-weight:800;font-size:.95rem;line-height:1.3;}
+    .quiz-head-titles .t2{font-size:.78rem;color:var(--q-dim);margin-top:2px;}
+    .quiz-tag{flex:none;background:var(--green);color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.06em;border-radius:7px;padding:5px 9px;transform:rotate(2deg);}
+
+    .quiz-progress{display:none;margin-bottom:14px;}
+    .quiz-progress.visible{display:block;}
+    .quiz-progress-top{display:flex;justify-content:space-between;font-size:.74rem;font-weight:600;color:var(--q-dim);margin-bottom:7px;}
+    .quiz-progress-bar{height:5px;background:#ECE9E0;border-radius:99px;overflow:hidden;}
+    .quiz-progress-fill{height:100%;width:20%;background:linear-gradient(90deg,var(--green),var(--green-bright));border-radius:99px;transition:width .4s ease;}
+
+    .quiz-slide{display:none;}
+    .quiz-slide.is-active{display:block;animation:slideIn .28s ease;}
+    @keyframes slideIn{from{opacity:0;transform:translateX(14px);}to{opacity:1;transform:none;}}
+
+    .quiz-kicker{font-size:.8rem;font-weight:700;color:var(--green-deep);margin-bottom:7px;line-height:1.45;}
+    .quiz-question{font-weight:800;font-size:1.12rem;line-height:1.35;letter-spacing:-.01em;}
+    .quiz-subtext{font-size:.84rem;color:var(--q-dim);margin:6px 0 14px;}
+    .quiz-tiles{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;}
+    .quiz-tile{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;text-align:center;font-family:var(--font-sans);background:#F7F5EF;border:1.5px solid var(--line-light);border-radius:14px;padding:16px 10px 13px;cursor:pointer;transition:border-color .15s,background .15s,transform .1s;}
+    .quiz-tile:hover{border-color:var(--green);background:#F0FAF3;}
+    .quiz-tile:active{transform:scale(.97);}
+    .quiz-tile.picked{border-color:var(--green);background:#E8F8EE;}
+    .quiz-tile .tile-icon{font-size:2.1rem;line-height:1;}
+    .quiz-tile .tile-label{font-size:.86rem;line-height:1.35;color:var(--q-ink);}
+    .quiz-tile .tile-label b{display:block;font-weight:800;}
+    .quiz-deliver{display:flex;align-items:center;gap:7px;font-size:.74rem;color:var(--q-dim);margin-top:12px;padding-top:11px;border-top:1px solid #EAE7DE;}
+    .quiz-deliver .ic{color:var(--green);font-weight:800;}
+
+    .quiz-input-group{margin-bottom:11px;}
+    .quiz-label{display:block;font-size:.78rem;font-weight:700;margin-bottom:6px;color:var(--q-ink);}
+    .quiz-input{width:100%;font-family:var(--font-sans);font-size:16px;padding:13px 15px;border:1.5px solid var(--line-light);border-radius:12px;background:#FBFAF7;color:var(--q-ink);outline:none;transition:border-color .15s,box-shadow .15s;}
+    .quiz-input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(22,163,74,.13);background:#fff;}
+    .quiz-input.is-error{border-color:#DC2626;}
+    .phone-row{display:flex;gap:8px;}
+    .phone-prefix{flex:none;display:flex;align-items:center;font-family:var(--font-sans);font-size:16px;font-weight:600;color:var(--q-ink);background:#F1EFE8;border:1.5px solid var(--line-light);border-radius:12px;padding:0 10px;cursor:pointer;}
+    select.phone-prefix{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%234B5A50' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;background-size:11px;padding-right:26px;}
+    select.phone-prefix:focus{outline:none;border-color:var(--green);}
+
+    .quiz-cta{width:100%;font-family:var(--font-sans);font-size:1.02rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--green-bright),var(--green) 55%,var(--green-deep));border:none;border-radius:13px;padding:16px 18px;cursor:pointer;box-shadow:0 10px 24px -8px rgba(22,163,74,.55);transition:transform .12s,box-shadow .15s,opacity .15s;margin-top:4px;}
+    .quiz-cta:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 14px 28px -8px rgba(22,163,74,.6);}
+    .quiz-cta:active:not(:disabled){transform:scale(.985);}
+    .quiz-cta:disabled{opacity:.45;cursor:not-allowed;box-shadow:none;}
+    .quiz-back{background:none;border:none;font-family:var(--font-sans);font-size:.8rem;font-weight:600;color:var(--q-dim);cursor:pointer;padding:9px 2px 0;}
+    .quiz-back:hover{color:var(--q-ink);}
+    .quiz-error{display:none;font-size:.8rem;font-weight:600;color:#DC2626;margin-top:8px;}
+    .quiz-error.active{display:block;}
+    .quiz-privacy{display:flex;align-items:flex-start;gap:10px;font-size:.78rem;color:var(--q-dim);margin:4px 0 12px;cursor:pointer;line-height:1.5;}
+    .quiz-privacy input{width:17px;height:17px;margin-top:2px;accent-color:var(--green);flex:none;cursor:pointer;}
+    .quiz-privacy a{color:var(--green-deep);}
+
+    /* Success */
+    .quiz-success{display:none;text-align:center;padding:8px 0 4px;}
+    .quiz-success.active{display:block;animation:slideIn .3s ease;}
+    .success-check{width:56px;height:56px;border-radius:50%;background:#E8F8EE;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.5rem;color:var(--green);border:2px solid var(--green-bright);}
+    .quiz-success h3{font-family:var(--font-serif);font-weight:600;font-size:1.5rem;letter-spacing:-.01em;margin-bottom:6px;}
+    .quiz-success p{font-size:.86rem;color:var(--q-dim);}
+    .success-open{display:block;width:100%;text-decoration:none;text-align:center;font-size:1.02rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--green-bright),var(--green) 55%,var(--green-deep));border-radius:13px;padding:16px 18px;margin:16px 0 10px;box-shadow:0 10px 24px -8px rgba(22,163,74,.55);}
+    .success-mailnote{font-size:.78rem;color:var(--q-dim);}
+    .success-next{margin-top:16px;padding-top:14px;border-top:1px solid #EAE7DE;font-size:.82rem;color:var(--q-dim);}
+    .success-next a{display:inline-block;margin-top:6px;font-weight:700;color:var(--green-deep);text-decoration:none;}
+
+    /* ===== Sections ===== */
+    section{padding:62px 0;}
+    @media(min-width:1024px){section{padding:92px 0;}}
+    .section-label{display:flex;align-items:center;gap:10px;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;}
+    .sec-dark .section-label{color:var(--mint);}
+    .sec-light .section-label{color:var(--green-deep);}
+    .section-label::before{content:'';width:26px;height:1.5px;background:currentColor;}
+    .section-title{font-family:var(--font-serif);font-weight:600;font-size:clamp(1.75rem,5.8vw,2.7rem);line-height:1.12;letter-spacing:-.012em;max-width:20em;}
+    .section-sub{margin-top:12px;max-width:38em;font-size:.98rem;}
+    .sec-dark .section-sub{color:var(--ink-dim);}
+    .sec-light .section-sub{color:var(--q-dim);}
+
+    /* Curiosity */
+    .tease-grid{display:grid;gap:34px;align-items:center;grid-template-columns:minmax(0,1fr);}
+    @media(min-width:1024px){.tease-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:60px;}}
+    .tease-list{list-style:none;margin-top:24px;display:grid;gap:14px;}
+    .tease-list li{position:relative;padding-left:36px;font-size:.98rem;line-height:1.6;color:var(--q-dim);}
+    .tease-list li b{color:var(--q-ink);}
+    .tease-list li::before{content:'';position:absolute;left:0;top:5px;width:20px;height:20px;border-radius:50%;background:rgba(34,197,94,.12);border:1.5px solid var(--green);}
+    .tease-list li::after{content:'?';position:absolute;left:6px;top:4px;font-size:.74rem;font-weight:800;color:var(--green-deep);}
+    .tease-note{margin-top:22px;font-family:var(--font-serif);font-style:italic;font-weight:600;font-size:1.05rem;color:var(--green-deep);}
+    .tease-fan{display:flex;justify-content:center;padding:30px 0 10px;}
+    .tease-fan .fan{width:290px;height:220px;}
+    .tease-fan .sheet{width:150px;height:208px;}
+    .tease-fan .sheet.s1{padding:16px 15px;}
+    .tease-fan .sheet .s-title{font-size:1.2rem;}
+    .tease-fan .fan-tag{right:22px;}
+
+    /* Zeitfenster / Countdown */
+    .window-grid{display:grid;gap:30px;align-items:center;grid-template-columns:minmax(0,1fr);}
+    @media(min-width:1024px){.window-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;}}
+    .cd-card{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;text-align:center;}
+    @media(min-width:768px){.cd-card{padding:34px 30px;}}
+    .cd-label{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);}
+    .cd-num{font-family:var(--font-serif);font-weight:600;font-style:italic;font-size:clamp(4.2rem,20vw,7rem);line-height:1;color:var(--mint);letter-spacing:-.03em;margin:6px 0 2px;font-variant-numeric:tabular-nums;}
+    .cd-sub{font-size:.95rem;color:var(--ink-dim);}
+    .cd-sub b{color:var(--ink);}
+    .months{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin-top:24px;align-items:end;height:112px;}
+    .mo{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px;height:100%;}
+    .mo .bar{width:100%;border-radius:6px 6px 3px 3px;background:rgba(244,241,232,.10);transform-origin:bottom;transform:scaleY(0);transition:transform .9s cubic-bezier(.2,.7,.2,1);}
+    .mo.win .bar{background:linear-gradient(180deg,var(--green-bright),var(--green-deep));}
+    .mo.peak .bar{background:linear-gradient(180deg,var(--mint),var(--green));}
+    .mo .lab{font-size:.66rem;font-weight:700;letter-spacing:.06em;color:var(--ink-faint);}
+    .mo.win .lab,.mo.peak .lab{color:var(--ink);}
+    .cd-card.in .mo .bar{transform:scaleY(1);}
+    .cd-card.in .mo:nth-child(1) .bar{transition-delay:.05s}.cd-card.in .mo:nth-child(2) .bar{transition-delay:.15s}.cd-card.in .mo:nth-child(3) .bar{transition-delay:.25s}.cd-card.in .mo:nth-child(4) .bar{transition-delay:.35s}.cd-card.in .mo:nth-child(5) .bar{transition-delay:.45s}.cd-card.in .mo:nth-child(6) .bar{transition-delay:.55s}
+    .months-legend{display:flex;justify-content:center;gap:16px;margin-top:12px;font-size:.7rem;color:var(--ink-dim);flex-wrap:wrap;}
+    .months-legend span::before{content:'';display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:-1px;background:rgba(244,241,232,.18);}
+    .months-legend span.w::before{background:var(--green-bright);}
+    .months-legend span.p::before{background:var(--mint);}
+    .window-copy p{color:var(--ink-dim);margin-top:14px;font-size:.98rem;}
+    .window-copy p b{color:var(--ink);}
+    .window-cta{display:inline-block;margin-top:22px;text-decoration:none;font-size:1rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--green-bright),var(--green) 55%,var(--green-deep));border-radius:13px;padding:15px 30px;box-shadow:0 12px 30px -8px rgba(22,163,74,.55);transition:transform .12s;}
+    .window-cta:hover{transform:translateY(-1px);}
+
+    /* Trust */
+    .logos{padding:10px 0 0;}
+    .logos-label{text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--q-faint);margin-bottom:18px;}
+    .marquee{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+    .marquee-track{display:flex;gap:12px;width:max-content;animation:marquee 38s linear infinite;}
+    @keyframes marquee{to{transform:translateX(-50%);}}
+    .logo-chip{flex:none;background:#fff;border:1px solid var(--line-light);border-radius:12px;padding:10px 18px;display:flex;align-items:center;justify-content:center;height:58px;}
+    .logo-chip img{height:36px;width:auto;max-width:120px;object-fit:contain;}
+    .network-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:22px;}
+    .network-stat b{display:block;font-family:var(--font-serif);font-weight:600;font-size:clamp(1.25rem,5.6vw,1.7rem);color:var(--green-deep);letter-spacing:-.01em;white-space:nowrap;}
+    .network-stat span{display:block;font-size:.72rem;color:var(--q-dim);line-height:1.35;margin-top:2px;}
+    .testi-grid{display:grid;gap:14px;margin-top:34px;grid-template-columns:minmax(0,1fr);}
+    @media(min-width:768px){.testi-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}}
+    .testi{background:#fff;color:var(--q-ink);border:1px solid var(--line-light);border-radius:var(--radius);padding:24px 22px;display:flex;flex-direction:column;gap:12px;}
+    .testi-result{font-family:var(--font-serif);font-weight:600;font-size:1.15rem;letter-spacing:-.01em;color:#166534;}
+    .testi .stars{color:#FBBF24;font-size:.85rem;letter-spacing:2px;margin-top:-4px;}
+    .testi p{font-size:.9rem;line-height:1.6;flex:1;}
+    .testi-foot{display:flex;align-items:center;gap:11px;}
+    .testi-avatar{width:38px;height:38px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem;flex:none;}
+    .testi-name{font-weight:700;font-size:.85rem;line-height:1.3;}
+    .testi-verified{font-size:.72rem;color:var(--q-dim);}
+    .google-badge{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 8px;background:#fff;border:1px solid var(--line-light);border-radius:999px;padding:9px 18px;font-size:.82rem;font-weight:600;color:var(--q-dim);margin-top:22px;}
+    .google-badge b{color:var(--q-ink);}
+    .gb-item{white-space:nowrap;}
+    .gb-item + .gb-item::before{content:'·';margin-right:8px;color:var(--q-faint);}
+
+    /* Final CTA */
+    .final-cta{background:linear-gradient(150deg,#123522,var(--bg-2) 70%);border:1px solid rgba(110,231,160,.22);border-radius:26px;padding:44px 26px;text-align:center;position:relative;overflow:hidden;}
+    @media(min-width:768px){.final-cta{padding:64px 48px;}}
+    .final-cta::before{content:'';position:absolute;top:-70px;right:-70px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,.22),transparent 70%);}
+    .final-cta h2{font-family:var(--font-serif);font-weight:600;font-size:clamp(1.8rem,6vw,2.8rem);line-height:1.12;letter-spacing:-.01em;max-width:17em;margin:0 auto;color:var(--ink);}
+    .final-cta h2 .ital{font-style:italic;color:var(--mint);}
+    .final-cta p{color:var(--ink-dim);margin:16px auto 26px;max-width:32em;font-size:.95rem;}
+    .btn-primary{display:inline-block;text-decoration:none;font-size:1.05rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--green-bright),var(--green) 55%,var(--green-deep));border-radius:14px;padding:17px 34px;box-shadow:0 12px 30px -8px rgba(22,163,74,.55);transition:transform .12s,box-shadow .15s;}
+    .btn-primary:hover{transform:translateY(-1px);}
+    .final-note{font-size:.76rem;color:var(--ink-faint);margin-top:14px;}
+
+    /* Footer */
+    footer{background:var(--bg);color:var(--ink-faint);border-top:1px solid var(--line);padding:34px 0 110px;}
+    @media(min-width:768px){footer{padding-bottom:44px;}}
+    .footer-row{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;justify-content:space-between;font-size:.78rem;}
+    .footer-links{display:flex;gap:20px;}
+    .footer-links a{color:var(--ink-dim);text-decoration:none;}
+    .footer-note{font-size:.7rem;margin-top:16px;max-width:52em;}
+
+    /* Sticky CTA (mobil) */
+    .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(10,23,16,.84);backdrop-filter:blur(10px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s ease;}
+    .sticky-cta.visible{transform:none;}
+    .sticky-cta a{display:block;text-align:center;text-decoration:none;font-size:1rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--green-bright),var(--green) 55%,var(--green-deep));border-radius:13px;padding:15px;box-shadow:0 10px 24px -8px rgba(22,163,74,.55);}
+    @media(min-width:1024px){.sticky-cta{display:none;}}
+  </style>
+</head>
+<body>
+
+  <!-- ===== TOPBAR ===== -->
+  <header class="topbar">
+    <div class="container">
+      <img src="assets/logo-white.png" alt="GreenCareers" width="120" height="40">
+    </div>
+  </header>
+
+  <!-- ===== HERO (dunkel) ===== -->
+  <section class="hero sec-dark" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="leaf" style="left:8%;animation-duration:14s;animation-delay:0s"></span>
+      <span class="leaf" style="left:22%;animation-duration:17s;animation-delay:3s;width:10px;height:10px"></span>
+      <span class="leaf" style="left:41%;animation-duration:15s;animation-delay:6s"></span>
+      <span class="leaf" style="left:63%;animation-duration:19s;animation-delay:1.5s;width:11px;height:11px"></span>
+      <span class="leaf" style="left:78%;animation-duration:16s;animation-delay:8s"></span>
+      <span class="leaf" style="left:91%;animation-duration:18s;animation-delay:4.5s;width:9px;height:9px"></span>
+    </div>
+    <div class="container">
+      <div class="hero-copy">
+        <span class="hero-badge rise"><span class="dot"></span> Kostenlos · für GaLaBau-Geschäftsführer</span>
+        <div class="hero-kicker rise d1">Kurz-Report · Ausgabe September 2026</div>
+        <h1 class="rise d2">Der <span class="q4">Q4-Effekt.</span></h1>
+        <p class="hero-sub rise d3">Warum GaLaBau-Betriebe ihre besten Fachkräfte <b>zwischen Oktober und Januar</b> gewinnen – und was bis zum 31.&nbsp;Dezember passieren muss.</p>
+        <div class="hero-chips rise d4">
+          <span class="hero-chip cd">⏳ Q4-Fenster: noch <b id="cd-chip">–</b> Tage</span>
+          <span class="hero-chip">📄 <b>3 Seiten</b> · 4 Min. Lesezeit</span>
+        </div>
+        <div class="fan-wrap rise d5">
+          <div class="fan fan-float">
+            <div class="fan-tag">GRATIS</div>
+            <div class="sheet s3"><svg viewBox="0 0 132 182" aria-hidden="true"><rect x="16" y="22" width="60" height="4" rx="2" fill="#8E9A90"/><rect x="16" y="36" width="100" height="3" rx="1.5" fill="#DDD8CC"/><rect x="16" y="46" width="88" height="3" rx="1.5" fill="#DDD8CC"/><rect x="16" y="56" width="96" height="3" rx="1.5" fill="#DDD8CC"/><rect x="16" y="78" width="100" height="40" rx="5" fill="#EEF7F0"/><rect x="24" y="90" width="50" height="3" rx="1.5" fill="rgba(22,163,74,.6)"/><rect x="24" y="100" width="70" height="3" rx="1.5" fill="#C9C3B5"/><rect x="16" y="134" width="96" height="3" rx="1.5" fill="#DDD8CC"/><rect x="16" y="144" width="84" height="3" rx="1.5" fill="#DDD8CC"/></svg></div>
+            <div class="sheet s2"><svg viewBox="0 0 132 182" aria-hidden="true"><rect x="16" y="22" width="52" height="4" rx="2" fill="#8E9A90"/><polyline points="20,120 40,112 60,106 80,84 100,62 116,40" fill="none" stroke="rgba(22,163,74,.6)" stroke-width="3" stroke-linecap="round"/><rect x="16" y="130" width="100" height="3" rx="1.5" fill="#DDD8CC"/><rect x="16" y="140" width="80" height="3" rx="1.5" fill="#DDD8CC"/><rect x="16" y="150" width="92" height="3" rx="1.5" fill="#DDD8CC"/></svg></div>
+            <div class="sheet s1">
+              <img class="s-logo" src="assets/logo-white.png" alt="">
+              <div><div class="s-eyebrow">Kurz-Report</div><div class="s-title">Der <i>Q4-Effekt</i></div></div>
+              <div class="s-foot">Garten- &amp; Landschaftsbau · 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== QUIZ CARD (im Hero – Frage 1 above the fold) ===== -->
+      <div class="quiz-card rise d3" id="quiz">
+        <div class="quiz-head">
+          <div class="mini-cover" aria-hidden="true"><span>Q4</span><small>Effekt</small></div>
+          <div class="quiz-head-titles">
+            <div class="t1">Der Q4-Effekt · Kurz-Report</div>
+            <div class="t2">3 Seiten · PDF · Sofort-Zugriff</div>
+          </div>
+          <span class="quiz-tag">GRATIS</span>
+        </div>
+
+        <div class="quiz-progress" id="quiz-progress">
+          <div class="quiz-progress-top">
+            <span id="quiz-progress-label">Schritt 1 von 5</span>
+            <span id="quiz-progress-time">≈ 40&nbsp;Sek. übrig</span>
+          </div>
+          <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div>
+        </div>
+
+        <div id="lead-form">
+          <!-- STEP 1 — Zeithorizont (1-Klick, personalisiert den Rest) -->
+          <div class="quiz-slide is-active" data-slide="1">
+            <h3 class="quiz-question">Wann soll Ihre nächste Fachkraft anfangen?</h3>
+            <p class="quiz-subtext">Ein Klick – dann geht es direkt weiter.</p>
+            <div class="quiz-tiles">
+              <button type="button" class="quiz-tile" data-field="dringlichkeit" data-value="noch-2026"><span class="tile-icon">🍂</span><span class="tile-label"><b>Noch 2026</b> so schnell wie möglich</span></button>
+              <button type="button" class="quiz-tile" data-field="dringlichkeit" data-value="saisonstart-2027"><span class="tile-icon">🌱</span><span class="tile-label"><b>Saisonstart 2027</b> März / April</span></button>
+              <button type="button" class="quiz-tile" data-field="dringlichkeit" data-value="laufend"><span class="tile-icon">🔁</span><span class="tile-label"><b>Laufend</b> wir suchen immer</span></button>
+              <button type="button" class="quiz-tile" data-field="dringlichkeit" data-value="informieren"><span class="tile-icon">👀</span><span class="tile-label"><b>Erst mal</b> informieren</span></button>
+            </div>
+            <div class="quiz-deliver"><span class="ic">✓</span> 3 Seiten als PDF · sofort nach dem letzten Schritt · DSGVO-konform</div>
+          </div>
+
+          <!-- STEP 2 — Rolle (Vertriebs-Filter) -->
+          <div class="quiz-slide" data-slide="2">
+            <div class="quiz-kicker" id="kicker-2">Passt – der Q4-Effekt wird vorbereitet.</div>
+            <h3 class="quiz-question">Was trifft auf Sie zu?</h3>
+            <div class="quiz-tiles" style="margin-top:14px;">
+              <button type="button" class="quiz-tile" data-field="rolle" data-value="inhaber-gf"><span class="tile-icon">🧑‍💼</span><span class="tile-label"><b>Inhaber / GF</b> GaLaBau-Betrieb</span></button>
+              <button type="button" class="quiz-tile" data-field="rolle" data-value="angestellt"><span class="tile-icon">👷</span><span class="tile-label"><b>Angestellt</b> im GaLaBau</span></button>
+              <button type="button" class="quiz-tile" data-field="rolle" data-value="zulieferer"><span class="tile-icon">🚚</span><span class="tile-label"><b>Zulieferer o.&nbsp;ä.</b> Grüne Branche</span></button>
+              <button type="button" class="quiz-tile" data-field="rolle" data-value="andere-branche"><span class="tile-icon">💼</span><span class="tile-label"><b>Andere</b> Branche</span></button>
+            </div>
+            <button type="button" class="quiz-back" data-back="1">← Zurück</button>
+          </div>
+        </div>
+
+        <!-- Daten-Slides als inertes Template: nichts Formular-artiges im
+             Initial-DOM (Meta-In-App-Browser-Autoscroll-Fix). Wird bei der
+             ersten Quiz-Interaktion eingehängt. -->
+        <template id="tpl-slides-345">
+          <!-- STEP 3 — E-Mail (Lead wird hier gesichert) -->
+          <div class="quiz-slide" data-slide="3">
+            <div class="quiz-kicker" id="kicker-3">Gleich ist der Q4-Effekt unterwegs …</div>
+            <h3 class="quiz-question">An welche E-Mail dürfen wir den Q4-Effekt senden?</h3>
+            <div class="quiz-input-group" style="margin-top:14px;">
+              <label class="quiz-label" for="email">Geschäftliche E-Mail</label>
+              <input type="email" class="quiz-input" id="email" name="email" placeholder="ihre@firma.de" autocomplete="email" autocapitalize="none" spellcheck="false" inputmode="email">
+            </div>
+            <button type="button" class="quiz-cta" id="quiz-step3-cta" data-next-from="3">Weiter →</button>
+            <div class="quiz-error" id="quiz-step3-error">Bitte tragen Sie eine gültige E-Mail-Adresse ein.</div>
+            <button type="button" class="quiz-back" data-back="2">← Zurück</button>
+          </div>
+
+          <!-- STEP 4 — Name + Firma -->
+          <div class="quiz-slide" data-slide="4">
+            <div class="quiz-kicker">✓ E-Mail gespeichert – der Report wird vorbereitet.</div>
+            <h3 class="quiz-question">Für welchen Betrieb bereiten wir den Q4-Effekt vor?</h3>
+            <div class="quiz-input-group" style="margin-top:14px;">
+              <label class="quiz-label" for="fullname">Vor- und Nachname</label>
+              <input type="text" class="quiz-input" id="fullname" name="fullname" placeholder="z. B. Max Müller" autocomplete="name" autocapitalize="words" spellcheck="false">
+            </div>
+            <div class="quiz-input-group">
+              <label class="quiz-label" for="unternehmen">Firmenname</label>
+              <input type="text" class="quiz-input" id="unternehmen" name="unternehmen" placeholder="z. B. Müller GaLaBau GmbH" autocomplete="organization" autocapitalize="words" spellcheck="false">
+            </div>
+            <button type="button" class="quiz-cta" id="quiz-step4-cta" data-next-from="4">Weiter →</button>
+            <div class="quiz-error" id="quiz-step4-error">Bitte tragen Sie Vor-, Nachnamen und Firmennamen ein.</div>
+            <button type="button" class="quiz-back" data-back="3">← Zurück</button>
+          </div>
+
+          <!-- STEP 5 — Handynummer + Datenschutz → Submit -->
+          <div class="quiz-slide" data-slide="5">
+            <div class="quiz-kicker">✅ Fast geschafft – letzter Schritt.</div>
+            <h3 class="quiz-question" id="phone-question">Unter welcher Handynummer erreichen wir Sie?</h3>
+            <p class="quiz-subtext" id="phone-subtext">Für Rückfragen zu Ihrem Zeithorizont – kurz und ohne Verpflichtung.</p>
+            <div class="quiz-input-group">
+              <label class="quiz-label" for="phone">Ihre Handynummer</label>
+              <div class="phone-row">
+                <select class="phone-prefix" id="phone-country" aria-label="Ländervorwahl">
+                  <option value="49" selected>DE +49</option>
+                  <option value="43">AT +43</option>
+                  <option value="41">CH +41</option>
+                  <option value="352">LU +352</option>
+                  <option value="33">FR +33</option>
+                  <option value="31">NL +31</option>
+                  <option value="32">BE +32</option>
+                  <option value="48">PL +48</option>
+                </select>
+                <input type="tel" class="quiz-input" id="phone" name="phone" placeholder="170 1234567" autocomplete="tel" inputmode="tel">
+              </div>
+            </div>
+            <label class="quiz-privacy">
+              <input type="checkbox" id="privacy" name="privacy">
+              <span>Ich stimme der <a href="https://www.green-careers.de/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> zu und bin einverstanden, von GreenCareers kontaktiert zu werden.</span>
+            </label>
+            <button type="button" class="quiz-cta" id="quiz-final-submit" disabled>Q4-Effekt freischalten →</button>
+            <div class="quiz-error" id="quiz-step5-error">Bitte Handynummer eintragen und Datenschutz bestätigen.</div>
+            <button type="button" class="quiz-back" data-back="4">← Zurück</button>
+          </div>
+        </template>
+
+        <!-- SUCCESS -->
+        <div class="quiz-success" id="form-success">
+          <div class="success-check">✓</div>
+          <h3>Freigeschaltet.</h3>
+          <p>Ihr Q4-Effekt ist bereit – drei Seiten, vier Minuten, ein Zeitfenster.</p>
+          <a class="success-open" id="report-open" href="assets/der-q4-effekt.pdf" target="_blank" rel="noopener">Q4-Effekt jetzt öffnen (PDF, 3&nbsp;Seiten) →</a>
+          <p class="success-mailnote" id="success-mailnote">Ihre Kopie ist außerdem per <b>E-Mail</b> unterwegs.</p>
+          <div class="success-next">Sie wollen das Q4-Fenster mit Plan angehen?<br><a id="success-beratung" href="https://beratung-galabau.green-careers.de/?utm_source=q4-effekt&amp;utm_medium=success&amp;utm_campaign=q4-effekt-2026" target="_blank" rel="noopener">Kostenloses Erstgespräch mit GreenCareers →</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CURIOSITY (hell) ===== -->
+  <section class="sec-light" id="einblick">
+    <div class="container">
+      <div class="tease-grid">
+        <div>
+          <div class="section-label reveal">Im Kurz-Report</div>
+          <h2 class="section-title reveal">Drei Seiten. Vier Minuten. <em class="accent">Ein Zeitfenster.</em></h2>
+          <ul class="tease-list reveal">
+            <li>Warum zwischen <b>Oktober und Januar</b> mehr Fachkräfte den Betrieb wechseln als im ganzen Sommer – und welche vier Mechanismen dahinterstecken</li>
+            <li>Die <b>Rückwärtsrechnung</b>: an welchem Datum Ihre Stelle spätestens sichtbar sein muss, damit die neue Kraft zum Saisonstart auf der Baustelle steht</li>
+            <li>Warum die meisten Betriebe das Fenster <b>verpassen</b> – und Sie ausgerechnet davon profitieren</li>
+            <li>Der <b>Q4-Fahrplan</b>: was im Oktober, November und Dezember konkret zu tun ist</li>
+          </ul>
+          <p class="tease-note reveal">Die Antworten stehen im Report – bewusst nicht auf dieser Seite.</p>
+        </div>
+        <div class="tease-fan reveal">
+          <div class="fan fan-float">
+            <div class="fan-tag">GRATIS</div>
+            <div class="sheet s3"><svg viewBox="0 0 150 208" aria-hidden="true"><rect x="18" y="26" width="64" height="4" rx="2" fill="#8E9A90"/><rect x="18" y="40" width="112" height="3" rx="1.5" fill="#DDD8CC"/><rect x="18" y="50" width="98" height="3" rx="1.5" fill="#DDD8CC"/><rect x="18" y="60" width="106" height="3" rx="1.5" fill="#DDD8CC"/><rect x="18" y="84" width="112" height="46" rx="5" fill="#EEF7F0"/><rect x="27" y="98" width="56" height="3" rx="1.5" fill="rgba(22,163,74,.6)"/><rect x="27" y="108" width="78" height="3" rx="1.5" fill="#C9C3B5"/><rect x="18" y="148" width="108" height="3" rx="1.5" fill="#DDD8CC"/><rect x="18" y="158" width="92" height="3" rx="1.5" fill="#DDD8CC"/></svg></div>
+            <div class="sheet s2"><svg viewBox="0 0 150 208" aria-hidden="true"><rect x="18" y="26" width="58" height="4" rx="2" fill="#8E9A90"/><polyline points="22,138 46,128 70,120 94,96 118,70 134,46" fill="none" stroke="rgba(22,163,74,.6)" stroke-width="3" stroke-linecap="round"/><rect x="18" y="150" width="112" height="3" rx="1.5" fill="#DDD8CC"/><rect x="18" y="160" width="90" height="3" rx="1.5" fill="#DDD8CC"/><rect x="18" y="170" width="104" height="3" rx="1.5" fill="#DDD8CC"/></svg></div>
+            <div class="sheet s1">
+              <img class="s-logo" src="assets/logo-white.png" alt="">
+              <div><div class="s-eyebrow">Kurz-Report</div><div class="s-title">Der <i>Q4-Effekt</i></div></div>
+              <div class="s-foot">Garten- &amp; Landschaftsbau · 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ZEITFENSTER / COUNTDOWN (dunkel) ===== -->
+  <section class="sec-dark" id="zeitfenster">
+    <div class="container">
+      <div class="window-grid">
+        <div class="window-copy">
+          <div class="section-label reveal">Das Zeitfenster</div>
+          <h2 class="section-title reveal">Wer bis zum 31.&nbsp;Dezember startet, hat zum Saisonstart 2027 die Mannschaft – wer im Januar anfängt, <em class="accent">sucht bis in den Sommer.</em></h2>
+          <p class="reveal">Die Saison klingt aus, die Winterpause beginnt, das neue Jahr wird geplant – auf beiden Seiten des Arbeitsmarkts. <b>Was in diesen Wochen passiert</b> und warum die meisten Betriebe erst im Januar reagieren, steht auf drei Seiten im Report.</p>
+          <a class="window-cta reveal" href="#quiz" data-scroll-quiz id="window-cta">Q4-Effekt anfordern →</a>
+        </div>
+        <div class="cd-card reveal" id="cd-card">
+          <div class="cd-label">Q4-Fenster 2026</div>
+          <div class="cd-num" id="cd-num">–</div>
+          <div class="cd-sub" id="cd-sub">Tage bis zum <b>31. Dezember</b></div>
+          <div class="months" aria-hidden="true">
+            <div class="mo"><div class="bar" style="height:30%"></div><span class="lab">SEP</span></div>
+            <div class="mo win"><div class="bar" style="height:52%"></div><span class="lab">OKT</span></div>
+            <div class="mo win"><div class="bar" style="height:64%"></div><span class="lab">NOV</span></div>
+            <div class="mo win"><div class="bar" style="height:82%"></div><span class="lab">DEZ</span></div>
+            <div class="mo peak"><div class="bar" style="height:100%"></div><span class="lab">JAN</span></div>
+            <div class="mo peak"><div class="bar" style="height:78%"></div><span class="lab">FEB</span></div>
+          </div>
+          <div class="months-legend"><span>Vorbereitung</span><span class="w">Q4-Fenster</span><span class="p">Wechsel-Spitze</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST (hell) ===== -->
+  <section class="sec-light" id="netzwerk" style="padding-bottom:40px;">
+    <div class="container">
+      <div class="section-label reveal">Wer hinter dem Q4-Effekt steht</div>
+      <h2 class="section-title reveal">GreenCareers – das Karrierenetzwerk <em class="accent">für den GaLaBau.</em></h2>
+      <p class="section-sub reveal">Jeden Tag kommen im GreenCareers-Netzwerk neue Bewerbungen, Wechselwünsche und Einstellungen aus der grünen Branche zusammen. Aus diesen Beobachtungen und öffentlichen Statistiken entsteht der Q4-Effekt.</p>
+      <div class="network-stats reveal">
+        <div class="network-stat"><b>30.000+</b><span>Fachkräfte im Netzwerk</span></div>
+        <div class="network-stat"><b>500+</b><span>GaLaBau-Betriebe</span></div>
+        <div class="network-stat"><b>900+</b><span>Platzierungen</span></div>
+      </div>
+    </div>
+    <div class="logos" style="margin-top:34px;">
+      <div class="logos-label">Diese Betriebe vertrauen GreenCareers</div>
+      <div class="marquee">
+        <div class="marquee-track" id="marquee-track">
+          <div class="logo-chip"><img src="assets/logos/hugenschmidt.png" alt="Hugenschmidt Gartenbau" loading="lazy"></div>
+          <div class="logo-chip"><img src="assets/logos/falz.png" alt="Gartenbau Falz" loading="lazy"></div>
+          <div class="logo-chip"><img src="assets/logos/jensen.png" alt="Jensen Landschaftsarchitekten" loading="lazy"></div>
+          <div class="logo-chip"><img src="assets/logos/epp.png" alt="EPP Gartenbau" loading="lazy"></div>
+          <div class="logo-chip"><img src="assets/logos/huben.png" alt="Huben" loading="lazy"></div>
+          <div class="logo-chip"><img src="assets/logos/feth.png" alt="Florian Feth Gartengestaltung" loading="lazy"></div>
+          <div class="logo-chip"><img src="assets/logos/bechstein.png" alt="Bechstein" loading="lazy"></div>
+          <div class="logo-chip"><img src="assets/logos/hiedl.png" alt="Hiedl" loading="lazy"></div>
+          <div class="logo-chip"><img src="assets/logos/jakober.png" alt="Jakober" loading="lazy"></div>
+          <div class="logo-chip"><img src="assets/logos/vogt.png" alt="Vogt" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="testi-grid">
+        <div class="testi reveal">
+          <div class="testi-result">20+ Bewerber auf eine Stelle</div>
+          <span class="stars">★★★★★</span>
+          <p>„Nach kurzer Zeit hatte ich mehr als 20 Bewerber auf meine ausgeschriebene Stelle im Garten- und Landschaftsbau. Ich kann GreenCareers jedem Arbeitgeber und Arbeitnehmer nur empfehlen."</p>
+          <div class="testi-foot"><span class="testi-avatar">TK</span><div><div class="testi-name">Tobias Knauf</div><div class="testi-verified">✓ Verifizierte Google-Bewertung</div></div></div>
+        </div>
+        <div class="testi reveal">
+          <div class="testi-result">2 Vorarbeiter in 6 Wochen</div>
+          <span class="stars">★★★★★</span>
+          <p>„Endlich ein Anbieter, der unsere Branche versteht. Kein Agentur-Geschwätz, keine leeren Versprechen – sondern passende Fachkräfte. Wir haben in 6 Wochen zwei Vorarbeiter eingestellt."</p>
+          <div class="testi-foot"><span class="testi-avatar">SK</span><div><div class="testi-name">Stefan Köhler</div><div class="testi-verified">✓ Verifizierte Google-Bewertung</div></div></div>
+        </div>
+        <div class="testi reveal">
+          <div class="testi-result">Mehrere Bewerber pro Tag</div>
+          <span class="stars">★★★★★</span>
+          <p>„Unkomplizierte Plattform, bei der es einen guten Rücklauf von mehreren Bewerbern pro Tag gegeben hat. Eine gute, offene Kommunikation erleichtert die Zusammenarbeit!"</p>
+          <div class="testi-foot"><span class="testi-avatar">BD</span><div><div class="testi-name">Boas Diehl</div><div class="testi-verified">✓ Verifizierte Google-Bewertung</div></div></div>
+        </div>
+      </div>
+      <div style="text-align:center;"><span class="google-badge reveal"><span class="gb-item">Google <b>4,9/5</b> <span style="color:#FBBF24;letter-spacing:1px;">★★★★★</span></span><span class="gb-item">500+ Betriebe</span><span class="gb-item">900+ Platzierungen</span></span></div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA (dunkel) ===== -->
+  <section class="sec-dark" id="abschluss">
+    <div class="container">
+      <div class="final-cta reveal">
+        <h2>Das Fenster ist offen. <span class="ital">Die Frage ist, wer es nutzt.</span></h2>
+        <p>Holen Sie sich den Q4-Effekt – drei Seiten, die erklären, warum die nächsten Wochen über Ihre Mannschaft 2027 entscheiden.</p>
+        <a class="btn-primary" href="#quiz" data-scroll-quiz id="final-cta">Q4-Effekt sichern →</a>
+        <div class="final-note">3&nbsp;Seiten · PDF · Sofort-Zugriff · Keine Verpflichtung</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <span>© 2026 GreenCareers – Die Karriereplattform für die grüne Branche.</span>
+        <div class="footer-links">
+          <a href="https://www.green-careers.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a>
+          <a href="https://www.green-careers.de/impressum" target="_blank" rel="noopener">Impressum</a>
+          <a href="https://www.green-careers.de/agb" target="_blank" rel="noopener">AGB</a>
+        </div>
+      </div>
+      <p class="footer-note">Der Q4-Effekt basiert auf öffentlichen Statistiken (u. a. Bundesagentur für Arbeit, BGL, gesetzliche Kündigungsfristen) und Beobachtungen aus dem GreenCareers-Netzwerk. Alle Quellen sind im Report ausgewiesen. Made with ♥ in Germany für den GaLaBau.</p>
+    </div>
+  </footer>
+
+  <!-- ===== STICKY CTA (mobil) ===== -->
+  <div class="sticky-cta" id="sticky-cta"><a href="#quiz" data-scroll-quiz id="sticky-cta-link">Q4-Effekt sichern →</a></div>
+
+  <script>
+  (function(){
+    'use strict';
+
+    /* =====================================================
+       KONFIGURATION
+       ===================================================== */
+    var LANDINGPAGE_ID = 'q4-effekt-2026';
+    var MAKE_WEBHOOK_URL = 'https://hook.eu1.make.com/vjfysb2fu5fltvtaazpwe294911mal6i';
+    var FUNNEL_EVENT_ENDPOINT = 'https://gc-tracking-dashboard.vercel.app/api/recruiting/funnel-event';
+    var LEAD_EVENT_ENDPOINT = 'https://gc-tracking-dashboard.vercel.app/api/tracking/lead-event';
+    var META_PIXEL_ID = '634469765867935';
+    var CLARITY_PROJECT_ID = ''; // Microsoft-Clarity-Projekt-ID eintragen → Heatmaps/Recordings aktiv
+    // WhatsApp-Zustellung: erst auf true stellen, wenn das Meta-Template
+    // freigegeben und das WhatsApp-Modul im Make-Szenario scharf ist –
+    // vorher darf die Seite keine WhatsApp-Zustellung versprechen.
+    var WHATSAPP_ENABLED = false;
+    // Ende des Q4-Fensters (Countdown) – Europe/Berlin
+    var WINDOW_END = new Date('2027-01-01T00:00:00+01:00');
+
+    // Live nur auf *.green-careers.de — sonst reiner Preview-Modus
+    var IS_LIVE = /(^|\.)green-careers\.de$/.test(location.hostname);
+
+    /* =====================================================
+       PIXEL + CLARITY (nur live)
+       ===================================================== */
+    if (IS_LIVE) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', META_PIXEL_ID);
+      fbq('track', 'PageView');
+      if (CLARITY_PROJECT_ID) {
+        (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", CLARITY_PROJECT_ID);
+      }
+    } else {
+      console.info('[GC Preview] Test-Modus: Tracking, Pixel und Webhook sind deaktiviert (Hostname ist nicht green-careers.de).');
+    }
+
+    /* =====================================================
+       HELPERS
+       ===================================================== */
+    function uuidv4(){
+      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){
+        var r=Math.random()*16|0,v=c==='x'?r:(r&3|8);return v.toString(16);});
+    }
+    var sessionId = (function(){
+      try {
+        var s = sessionStorage.getItem('gc_session_id');
+        if (!s) { s = uuidv4(); sessionStorage.setItem('gc_session_id', s); }
+        return s;
+      } catch(e){ return uuidv4(); }
+    })();
+    var trackingParams = (function(){
+      var out = {};
+      try {
+        var p = new URLSearchParams(location.search);
+        ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'].forEach(function(k){
+          var v = p.get(k); if (v) out[k] = v;
+        });
+      } catch(e){}
+      return out;
+    })();
+    function getCookie(name){
+      try { var m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)'); return m ? decodeURIComponent(m.pop()) : ''; } catch(e){ return ''; }
+    }
+    function getFbp(){ return getCookie('_fbp'); }
+    function getFbc(){
+      var c = getCookie('_fbc'); if (c) return c;
+      if (trackingParams.fbclid) return 'fb.1.' + Date.now() + '.' + trackingParams.fbclid;
+      return '';
+    }
+    // Stabile event_id pro Stufe + Session (übersteht Reload → Meta dedupliziert)
+    function getEventId(stage){
+      var key = 'gc_eid_' + stage + '_' + LANDINGPAGE_ID;
+      try { var id = localStorage.getItem(key); if (!id) { id = uuidv4(); localStorage.setItem(key, id); } return id; } catch(e){ return uuidv4(); }
+    }
+
+    /* =====================================================
+       META-CRAWLER-GUARD: Submit nur nach echter Nutzer-Geste
+       UND ≥ 4 s Verweildauer (Ad-Review-Crawler klickt alles durch)
+       ===================================================== */
+    var loadedAt = Date.now(), realGesture = false;
+    ['pointerdown','touchstart','keydown'].forEach(function(ev){
+      window.addEventListener(ev, function(e){ if (e.isTrusted) realGesture = true; }, { passive:true, capture:true });
+    });
+    window.gcRealUser = function(){ return realGesture && (Date.now() - loadedAt) >= 4000; };
+
+    /* =====================================================
+       TRACKING (identischer Vertrag wie die Report-LPs)
+       ===================================================== */
+    function trackFunnelEvent(eventType, slideId){
+      var body = Object.assign({
+        event_type: eventType, slide_id: slideId, landingpage_id: LANDINGPAGE_ID, session_id: sessionId,
+        referrer: document.referrer || '', page_url: location.href, user_agent: navigator.userAgent
+      }, trackingParams);
+      if (!IS_LIVE) { console.info('[GC Preview] funnel-event:', eventType, slideId || ''); return; }
+      try { fetch(FUNNEL_EVENT_ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body), keepalive:true, credentials:'omit' }).catch(function(){}); } catch(e){}
+    }
+    function trackPixelEvent(name, params){
+      if (!IS_LIVE) { console.info('[GC Preview] pixel:', name, params || {}); return; }
+      try { if (typeof fbq === 'function') fbq('trackCustom', name, params || {}); } catch(e){}
+    }
+    function sendLeadStageEvent(stage, eventId){
+      var body = Object.assign({
+        stage: stage, event_id: eventId, landingpage_id: LANDINGPAGE_ID, session_id: sessionId,
+        email: answers.email, vorname: answers.vorname || '', nachname: answers.nachname || '',
+        unternehmen: answers.unternehmen || '', phone: answers.phone || '',
+        rolle: answers.rolle || '', dringlichkeit: answers.dringlichkeit || '',
+        fbp: getFbp(), fbc: getFbc(), page_url: location.href, referrer: document.referrer || '', user_agent: navigator.userAgent
+      }, trackingParams);
+      try {
+        var p = new URLSearchParams(location.search);
+        if (p.get('tracking_debug') === '1') body.dry_run = true;
+        if (p.get('test_capi')) body.test_event_code = p.get('test_capi');
+      } catch(e){}
+      if (!IS_LIVE) { console.info('[GC Preview] lead-event:', stage, body); return; }
+      try { fetch(LEAD_EVENT_ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body), keepalive:true, credentials:'omit' }).catch(function(){}); } catch(e){}
+    }
+
+    /* =====================================================
+       COUNTDOWN (Tage bis 31.12., Europe/Berlin)
+       ===================================================== */
+    var daysLeft = Math.max(0, Math.ceil((WINDOW_END.getTime() - Date.now()) / 86400000));
+    var cdChip = document.getElementById('cd-chip'), cdNum = document.getElementById('cd-num'), cdSub = document.getElementById('cd-sub');
+    cdChip.textContent = daysLeft;
+    if (daysLeft === 0) {
+      cdChip.parentNode.innerHTML = '🌱 Saison 2027 in Vorbereitung';
+      cdSub.innerHTML = 'Das Q4-Fenster 2026 ist geschlossen – <b>die Wechsel-Spitze läuft</b>';
+    }
+    function animateCount(el, to){
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced || to === 0) { el.textContent = to; return; }
+      var start = null, dur = 1100;
+      function step(ts){ if (!start) start = ts; var p = Math.min(1, (ts - start) / dur); var e = 1 - Math.pow(1 - p, 3); el.textContent = Math.round(to * e); if (p < 1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    }
+
+    /* =====================================================
+       QUIZ
+       ===================================================== */
+    var answers = { dringlichkeit:'', rolle:'', email:'', vorname:'', nachname:'', unternehmen:'', phone:'' };
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.quiz-slide'));
+    var progress = document.getElementById('quiz-progress');
+    var progressFill = document.getElementById('quiz-progress-fill');
+    var progressLabel = document.getElementById('quiz-progress-label');
+    var progressTime = document.getElementById('quiz-progress-time');
+    var quizCard = document.getElementById('quiz');
+    var quizStarted = false;
+    var TOTAL_STEPS = 5;
+    var TIME_LEFT = {1:'≈ 40 Sek.',2:'≈ 30 Sek.',3:'≈ 20 Sek.',4:'≈ 15 Sek.',5:'≈ 10 Sek.'};
+
+    // Personalisierte Zwischentexte je Zeithorizont (Frage 1)
+    var KICKER_2 = {
+      'noch-2026':       'Noch 2026 – dann zählt jede Woche. Der Q4-Effekt wird vorbereitet.',
+      'saisonstart-2027':'Saisonstart 2027 – genau dafür ist der Q4-Effekt geschrieben.',
+      'laufend':         'Laufend suchen – dann ist das Q4-Fenster Ihr stärkster Abschnitt im Jahr.',
+      'informieren':     'Gute Entscheidung – drei Seiten, die das Zeitfenster erklären.'
+    };
+    var KICKER_3 = {
+      'noch-2026':       'Für eine Einstellung noch in diesem Jahr sind die Wechselbereiten jetzt unterwegs – der Q4-Effekt zeigt, warum.',
+      'saisonstart-2027':'Eine offene Stelle bleibt in Deutschland im Schnitt 166 Tage unbesetzt (BA) – für den Saisonstart im April fällt der Startschuss rechnerisch im Oktober. Der Q4-Effekt zeigt die Rückwärtsrechnung.',
+      'laufend':         'Wer laufend sucht, holt im Q4 die meisten Wechselwilligen ab – der Q4-Effekt zeigt, wie Sie das Fenster nutzen.',
+      'informieren':     'Der Q4-Effekt erklärt auf drei Seiten, warum das Zeitfenster bis Dezember so wertvoll ist.'
+    };
+
+    function showSlide(n){
+      slides.forEach(function(s){ s.classList.toggle('is-active', s.dataset.slide === String(n)); });
+      quizCard.classList.toggle('quiz-started', n > 1);
+      if (n > 1) {
+        progress.classList.add('visible');
+        progressLabel.textContent = 'Schritt ' + n + ' von ' + TOTAL_STEPS;
+        progressTime.textContent = TIME_LEFT[n] + ' übrig';
+        progressFill.style.width = (n/TOTAL_STEPS*100) + '%';
+      } else {
+        progress.classList.remove('visible');
+      }
+      trackFunnelEvent('slide_view', String(n));
+      trackPixelEvent('Quiz_Step_' + n + '_Viewed', { landingpage: LANDINGPAGE_ID });
+      var firstInput = slides[n-1] && slides[n-1].querySelector('.quiz-input');
+      if (firstInput) setTimeout(function(){ firstInput.focus({ preventScroll:true }); }, 250);
+      if (quizCard.getBoundingClientRect().top < 0) quizCard.scrollIntoView({ behavior:'smooth', block:'start' });
+    }
+
+    // LP-View + Step 1 sichtbar
+    trackFunnelEvent('lp_view', null);
+    trackFunnelEvent('slide_view', '1');
+    trackPixelEvent('Quiz_Step_1_Viewed', { landingpage: LANDINGPAGE_ID });
+
+    // Kachel-Klicks (Step 1 + 2)
+    document.querySelectorAll('.quiz-tile').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var field = btn.dataset.field, value = btn.dataset.value;
+        answers[field] = value;
+        btn.parentNode.querySelectorAll('.quiz-tile').forEach(function(b){ b.classList.remove('picked'); });
+        btn.classList.add('picked');
+        if (!quizStarted) {
+          quizStarted = true;
+          trackPixelEvent('Quiz_Started', { landingpage: LANDINGPAGE_ID, cta_location: 'quiz_tile_' + field });
+        }
+        if (field === 'dringlichkeit') {
+          document.getElementById('kicker-2').textContent = KICKER_2[value] || KICKER_2['informieren'];
+          mountContactFields();
+          setTimeout(function(){ showSlide(2); }, 180);
+        } else {
+          setTimeout(function(){ showSlide(3); }, 180);
+        }
+      });
+    });
+    document.querySelectorAll('.quiz-back').forEach(function(btn){
+      btn.addEventListener('click', function(){ showSlide(parseInt(btn.dataset.back, 10)); });
+    });
+
+    /* =====================================================
+       DATEN-SLIDES: erst bei Quiz-Start ins DOM
+       ===================================================== */
+    var fieldsMounted = false;
+    var fullnameInput, firmaInput, emailInput, phoneInput, privacyCheck;
+    var step3CTA, step3Error, step4CTA, step4Error, finalSubmit, step5Error;
+
+    function evaluateFinalEnabled(){
+      var digits = phoneInput.value.replace(/\D/g,'');
+      finalSubmit.disabled = !(digits.length >= 6 && privacyCheck.checked);
+    }
+
+    function mountContactFields(){
+      if (fieldsMounted) return;
+      fieldsMounted = true;
+      var leadForm = document.getElementById('lead-form');
+      leadForm.appendChild(document.getElementById('tpl-slides-345').content.cloneNode(true));
+      Array.prototype.slice.call(leadForm.querySelectorAll('.quiz-slide')).forEach(function(s){ if (slides.indexOf(s) === -1) slides.push(s); });
+
+      emailInput = document.getElementById('email');
+      fullnameInput = document.getElementById('fullname');
+      firmaInput = document.getElementById('unternehmen');
+      phoneInput = document.getElementById('phone');
+      privacyCheck = document.getElementById('privacy');
+      step3CTA = document.getElementById('quiz-step3-cta');
+      step3Error = document.getElementById('quiz-step3-error');
+      step4CTA = document.getElementById('quiz-step4-cta');
+      step4Error = document.getElementById('quiz-step4-error');
+      finalSubmit = document.getElementById('quiz-final-submit');
+      step5Error = document.getElementById('quiz-step5-error');
+
+      // WhatsApp-Framing nur, wenn die Zustellung wirklich läuft
+      if (WHATSAPP_ENABLED) {
+        document.getElementById('phone-question').textContent = 'Wohin dürfen wir den Q4-Effekt zusätzlich per WhatsApp senden?';
+        document.getElementById('phone-subtext').innerHTML = 'So haben Sie die drei Seiten <b>direkt auf dem Handy</b> – zusätzlich zur E-Mail-Kopie.';
+        document.getElementById('success-mailnote').innerHTML = 'Ihre Kopie ist außerdem per <b>WhatsApp und E-Mail</b> unterwegs.';
+      }
+
+      leadForm.querySelectorAll('.quiz-back').forEach(function(btn){
+        btn.addEventListener('click', function(){ showSlide(parseInt(btn.dataset.back, 10)); });
+      });
+      emailInput.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); step3CTA.click(); } });
+      firmaInput.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); step4CTA.click(); } });
+      phoneInput.addEventListener('input', evaluateFinalEnabled);
+      privacyCheck.addEventListener('change', evaluateFinalEnabled);
+      [emailInput, fullnameInput, firmaInput, phoneInput].forEach(function(el){ el.addEventListener('input', function(){ el.classList.remove('is-error'); }); });
+
+      // STEP 3 — E-Mail → Lead-Stufe (Lead ist ab hier gesichert)
+      step3CTA.addEventListener('click', function(){
+        var email = emailInput.value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { emailInput.classList.add('is-error'); step3Error.classList.add('active'); return; }
+        emailInput.classList.remove('is-error'); step3Error.classList.remove('active');
+        answers.email = email;
+        if (!window.__gcLeadFired) {
+          window.__gcLeadFired = true;
+          var leadEventId = getEventId('lead');
+          if (IS_LIVE) {
+            try { if (typeof fbq === 'function') fbq('track', 'Lead', { content_name:'Q4-Effekt E-Mail erhalten', landingpage: LANDINGPAGE_ID }, { eventID: leadEventId }); } catch(e){}
+          } else { console.info('[GC Preview] pixel: Lead (eventID ' + leadEventId + ')'); }
+          sendLeadStageEvent('lead', leadEventId);
+        }
+        showSlide(4);
+      });
+
+      // STEP 4 — Name + Firma
+      step4CTA.addEventListener('click', function(){
+        var parts = fullnameInput.value.trim().split(/\s+/).filter(Boolean);
+        var firma = firmaInput.value.trim();
+        if (parts.length < 2 || firma.length < 2) {
+          if (parts.length < 2) fullnameInput.classList.add('is-error');
+          if (firma.length < 2) firmaInput.classList.add('is-error');
+          step4Error.classList.add('active'); return;
+        }
+        step4Error.classList.remove('active');
+        answers.vorname = parts[0];
+        answers.nachname = parts.slice(1).join(' ');
+        answers.unternehmen = firma;
+        showSlide(5);
+      });
+
+      // STEP 5 — Telefon + Datenschutz → Submit
+      finalSubmit.addEventListener('click', onFinalSubmit);
+    }
+
+    // Kicker auf dem E-Mail-Step wird beim Anzeigen gesetzt (Felder existieren erst nach Mount)
+    var _showSlide = showSlide;
+    showSlide = function(n){
+      if (n === 3) { var k = document.getElementById('kicker-3'); if (k) k.textContent = KICKER_3[answers.dringlichkeit] || KICKER_3['informieren']; }
+      _showSlide(n);
+    };
+
+    function onFinalSubmit(){
+      var digits = phoneInput.value.replace(/\D/g,'');
+      if (digits.length < 6 || !privacyCheck.checked) { step5Error.classList.add('active'); return; }
+      if (!window.gcRealUser()) { step5Error.textContent = 'Bitte versuchen Sie es in einem Moment erneut.'; step5Error.classList.add('active'); return; }
+      step5Error.classList.remove('active');
+      var cc = document.getElementById('phone-country').value || '49';
+      if (digits.startsWith('00')) digits = digits.slice(2);
+      else if (digits.startsWith('0')) digits = cc + digits.slice(1);
+      else if (!digits.startsWith(cc)) digits = cc + digits;
+      answers.phone = '+' + digits;
+
+      var originalText = finalSubmit.textContent;
+      finalSubmit.textContent = 'Wird freigeschaltet…';
+      finalSubmit.disabled = true;
+
+      var payload = Object.assign({
+        vorname: answers.vorname, nachname: answers.nachname, unternehmen: answers.unternehmen,
+        email: answers.email, phone: answers.phone, rolle: answers.rolle, dringlichkeit: answers.dringlichkeit,
+        source: LANDINGPAGE_ID, landingpage_id: LANDINGPAGE_ID, session_id: sessionId,
+        timestamp: new Date().toISOString(), page_url: location.href, referrer: document.referrer || '', user_agent: navigator.userAgent
+      }, trackingParams);
+
+      var send;
+      if (IS_LIVE) {
+        send = fetch(MAKE_WEBHOOK_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) })
+          .then(function(r){ if (!r.ok) throw new Error('Webhook returned ' + r.status); });
+      } else {
+        console.info('[GC Preview] Make-Webhook (nicht gesendet):', payload);
+        send = new Promise(function(r){ setTimeout(r, 700); });
+      }
+
+      send.then(function(){
+        trackFunnelEvent('submit_success', null);
+        var crEventId = getEventId('complete_registration');
+        if (IS_LIVE) {
+          try { if (typeof fbq === 'function') fbq('track', 'CompleteRegistration', { content_name:'Q4-Effekt angefordert', landingpage: LANDINGPAGE_ID }, { eventID: crEventId }); } catch(e){}
+        } else { console.info('[GC Preview] pixel: CompleteRegistration (eventID ' + crEventId + ')'); }
+        sendLeadStageEvent('complete_registration', crEventId);
+        try { localStorage.setItem('gc_lead_data', JSON.stringify({ vorname: answers.vorname, nachname: answers.nachname, unternehmen: answers.unternehmen, email: answers.email, phone: answers.phone })); } catch(e){}
+        document.getElementById('lead-form').style.display = 'none';
+        progress.style.display = 'none';
+        document.getElementById('form-success').classList.add('active');
+        document.getElementById('sticky-cta').classList.remove('visible');
+        window.__gcSubmitted = true;
+        quizCard.scrollIntoView({ behavior:'smooth', block:'center' });
+      }).catch(function(err){
+        console.error('Form submit error:', err);
+        trackFunnelEvent('submit_failed', null);
+        step5Error.textContent = 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.';
+        step5Error.classList.add('active');
+        finalSubmit.textContent = originalText;
+        finalSubmit.disabled = false;
+      });
+    }
+
+    document.getElementById('report-open').addEventListener('click', function(){ trackPixelEvent('Report_Opened', { landingpage: LANDINGPAGE_ID }); });
+    document.getElementById('success-beratung').addEventListener('click', function(){ trackPixelEvent('Beratung_Link_Clicked', { landingpage: LANDINGPAGE_ID, cta_location: 'success' }); });
+
+    /* =====================================================
+       UI: Scroll-zu-Quiz, Sticky-CTA, Reveal, Marquee, Countdown-Animation
+       ===================================================== */
+    document.querySelectorAll('[data-scroll-quiz]').forEach(function(el){
+      el.addEventListener('click', function(e){
+        e.preventDefault();
+        trackPixelEvent(el.id === 'sticky-cta-link' ? 'Sticky_CTA_Clicked' : 'Quiz_Started', { landingpage: LANDINGPAGE_ID, cta_location: el.id || 'cta' });
+        quizCard.scrollIntoView({ behavior:'smooth', block:'start' });
+      });
+    });
+
+    var stickyCta = document.getElementById('sticky-cta');
+    function updateStickyCta(){
+      if (window.__gcSubmitted) { stickyCta.classList.remove('visible'); return; }
+      var quizRect = quizCard.getBoundingClientRect();
+      var quizVisible = quizRect.top < window.innerHeight * .8 && quizRect.bottom > 90;
+      stickyCta.classList.toggle('visible', !quizVisible && window.scrollY > 200);
+    }
+    window.addEventListener('scroll', updateStickyCta, { passive:true });
+    updateStickyCta();
+
+    var depthFired = {};
+    window.addEventListener('scroll', function(){
+      var pct = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+      [50, 90].forEach(function(mark){ if (pct >= mark && !depthFired[mark]) { depthFired[mark] = true; trackPixelEvent('Scroll_' + mark, { landingpage: LANDINGPAGE_ID }); } });
+    }, { passive:true });
+
+    var pending = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+    var cdCard = document.getElementById('cd-card'), cdAnimated = false;
+    function revealEl(el){
+      el.classList.add('in');
+      var i = pending.indexOf(el); if (i > -1) pending.splice(i, 1);
+      if (el === cdCard && !cdAnimated) { cdAnimated = true; animateCount(cdNum, daysLeft); }
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if (en.isIntersecting) { revealEl(en.target); io.unobserve(en.target); } });
+      }, { threshold:.12, rootMargin:'0px 0px -40px 0px' });
+      pending.forEach(function(el){ io.observe(el); });
+      window.addEventListener('scroll', function(){
+        if (!pending.length) return;
+        pending.slice().forEach(function(el){ if (el.getBoundingClientRect().top < window.innerHeight + 60) { revealEl(el); io.unobserve(el); } });
+      }, { passive:true });
+    } else {
+      pending.slice().forEach(revealEl);
+    }
+
+    var track = document.getElementById('marquee-track');
+    track.innerHTML += track.innerHTML;
+  })();
+  </script>
+</body>
+</html>
