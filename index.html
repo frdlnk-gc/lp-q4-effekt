@@ -89,26 +89,39 @@
     .hero-cd .cd-small{display:block;font-size:.84rem;font-weight:600;color:var(--ink-dim);margin-top:1px;}
     @media(max-width:1023px){.hero-copy{text-align:center;}.hero-sub,.hero-what{margin-left:auto;margin-right:auto;}}
 
-    /* ===== Fächer-Mockup ===== */
+    /* ===== Buch-Mockup (wie Report-LP: Deckblatt + angedeutete Seiten + Siegel) ===== */
     .fan-wrap{display:none;}
     @media(min-width:1024px){.fan-wrap{display:flex;justify-content:flex-start;margin-top:34px;}}
-    .fan{position:relative;width:250px;height:190px;}
-    .fan-float{animation:fanFloat 6s ease-in-out infinite;}
-    @keyframes fanFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-    .sheet{position:absolute;left:0;top:0;width:132px;height:182px;border-radius:4px;background:#FBFAF7;box-shadow:8px 8px 26px rgba(0,0,0,.35);transform-origin:left bottom;overflow:hidden;}
-    .sheet svg{position:absolute;inset:0;width:100%;height:100%;}
-    .sheet.s3{transform:rotate(16deg) translateX(10px);z-index:1;filter:brightness(.96);}
-    .sheet.s2{transform:rotate(8deg) translateX(5px);z-index:2;}
-    .sheet.s1{z-index:3;background:#10281B;padding:0;}
-    .sheet.s1 img{width:100%;height:100%;object-fit:cover;display:block;}
-    .sheet.s2,.sheet.s3{background:#F3F1EA;border:1px solid rgba(0,0,0,.05);}
-    .sheet .s-brand{font-family:var(--font-sans);font-weight:800;font-size:.52rem;letter-spacing:.04em;color:#fff;}
-    .sheet .s-brand span{color:var(--mint);}
-    .sheet .s-eyebrow{font-size:.42rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mint);margin-bottom:5px;}
-    .sheet .s-title{font-family:var(--font-serif);font-size:1.05rem;line-height:1.05;letter-spacing:-.01em;}
-    .sheet .s-title i{color:var(--mint);}
-    .sheet .s-foot{font-size:.4rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,241,232,.55);}
-    .fan-tag{position:absolute;right:-6px;top:-12px;background:linear-gradient(135deg,var(--green-bright),var(--green-deep));color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;border-radius:8px;padding:6px 9px;transform:rotate(6deg);box-shadow:0 8px 18px rgba(0,0,0,.35);z-index:5;}
+    .book-container{position:relative;width:250px;height:276px;margin:0 auto;perspective:1200px;padding-top:18px;}
+    .book-float{position:relative;width:200px;height:100%;animation:bookFloat 5s ease-in-out infinite;}
+    @keyframes bookFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+    .book-float::after{content:'';position:absolute;left:4%;right:-16%;bottom:-24px;height:30px;background:radial-gradient(ellipse at center,rgba(0,0,0,.5) 0%,transparent 70%);filter:blur(10px);z-index:-6;}
+    .book{position:relative;width:100%;height:100%;transform-style:preserve-3d;transform:rotateY(-6deg) rotateX(2deg);z-index:1;}
+    .fan-page{position:absolute;top:2.5%;left:10%;width:88%;height:94%;background:#FBFAF7;border-radius:3px 9px 9px 3px;box-shadow:10px 5px 24px rgba(0,0,0,.30);transform-origin:left bottom;overflow:hidden;}
+    .fan-page svg{position:absolute;inset:0;width:100%;height:100%;}
+    .fan-1{transform:rotate(4.5deg) translateX(4%);z-index:-1;}
+    .fan-2{transform:rotate(9.5deg) translateX(8%);z-index:-2;}
+    .fan-3{transform:rotate(15deg) translateX(12%);z-index:-3;filter:brightness(.97);}
+    .book-glow{position:absolute;width:140%;height:140%;top:-20%;left:-20%;background:radial-gradient(circle,rgba(34,197,94,.25) 0%,transparent 60%);border-radius:50%;pointer-events:none;z-index:-2;filter:blur(30px);}
+    .book-seal{position:absolute;top:-18px;right:-18px;width:70px;height:70px;z-index:12;transform:rotate(12deg);filter:drop-shadow(0 6px 14px rgba(0,0,0,.4));pointer-events:none;}
+    .book-seal svg{width:100%;height:100%;display:block;}
+    .book-cover{position:relative;width:100%;height:100%;background:linear-gradient(160deg,#10281B 0%,#153122 30%,#1C4029 65%,#10281B 100%);border-radius:3px 8px 8px 3px;box-shadow:0 25px 50px rgba(0,0,0,.5),0 12px 25px rgba(0,0,0,.3),inset 0 0 90px rgba(0,0,0,.25),inset 8px 0 14px rgba(0,0,0,.5),inset -2px 0 4px rgba(110,231,160,.12);padding:22px 20px 18px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;}
+    .book-cover::before{content:'';position:absolute;inset:0;background:linear-gradient(125deg,transparent 42%,rgba(255,255,255,.06) 50%,transparent 58%);pointer-events:none;}
+    .book-cover::after{content:'';position:absolute;top:11px;left:18px;right:11px;bottom:11px;border:1px solid rgba(110,231,160,.22);border-radius:3px;pointer-events:none;}
+    .book-spine-edge{position:absolute;left:0;top:0;bottom:0;width:14px;background:linear-gradient(90deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.3) 40%,rgba(0,0,0,.1) 70%,transparent 100%);pointer-events:none;z-index:3;}
+    .book-pages-edge{position:absolute;right:-3px;top:4px;bottom:4px;width:4px;background:linear-gradient(90deg,rgba(0,0,0,.3),transparent 30%),repeating-linear-gradient(180deg,#EBE7DC 0px,#EBE7DC .5px,#C9C3B5 .5px,#C9C3B5 1px);border-radius:0 2px 2px 0;transform:rotateY(-8deg);transform-origin:left center;box-shadow:1px 0 5px rgba(0,0,0,.2);}
+    .book-top{display:flex;align-items:center;position:relative;z-index:2;}
+    .book-logo-img{height:19px;width:auto;opacity:.95;}
+    .book-title-block{position:relative;z-index:2;}
+    .book-eyebrow{font-size:.56rem;font-weight:700;color:var(--mint);letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px;}
+    .book-title{font-family:var(--font-serif);font-size:1.5rem;font-weight:600;color:var(--ink);line-height:1.1;letter-spacing:-.01em;}
+    .book-title i{font-style:italic;color:var(--mint);}
+    .book-divider{width:34px;height:2px;background:var(--green-bright);margin:10px 0 0;border-radius:2px;}
+    .book-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;}
+    .book-branch{font-size:.53rem;font-weight:600;color:rgba(244,241,232,.55);letter-spacing:.14em;text-transform:uppercase;max-width:120px;line-height:1.4;}
+    .book-pages-count{font-size:.5rem;font-weight:500;color:rgba(244,241,232,.4);letter-spacing:.08em;}
+    @media(min-width:1024px){.book-container.lg{width:330px;height:362px;}.book-container.lg .book-float{width:266px;}.book-container.lg .book-title{font-size:1.9rem;}.book-container.lg .book-logo-img{height:23px;}.book-container.lg .book-seal{width:88px;height:88px;top:-22px;right:-20px;}.book-container.lg .book-eyebrow{font-size:.62rem;}}
+    @media (prefers-reduced-motion: reduce){.book-float{animation:none;}}
 
     /* ===== Quiz Card ===== */
     .quiz-card{background:#fff;color:var(--q-ink);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 18px 18px;position:relative;}
@@ -233,13 +246,7 @@
     .check-list li b{color:var(--q-ink);}
     .check-list .ck{flex:none;width:24px;height:24px;border-radius:50%;background:#E8F8EE;border:1.5px solid var(--green);color:var(--green-deep);font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:2px;}
     .tease-note{margin-top:20px;font-size:.86rem;color:var(--q-dim);}
-    .tease-fan{display:flex;justify-content:center;padding:28px 0 10px;}
-    .tease-fan .fan{width:290px;height:220px;}
-    .tease-fan .sheet{width:150px;height:208px;}
-    .tease-fan .sheet.s1{padding:15px 15px;}
-    .tease-fan .sheet .s-title{font-size:1.2rem;}
-    .tease-fan .sheet .s-brand{font-size:.6rem;}
-    .tease-fan .fan-tag{right:22px;}
+    .tease-fan{display:flex;justify-content:center;padding:30px 0 16px;}
 
     /* Trust */
     .logos{padding:10px 0 0;}
@@ -318,11 +325,27 @@
         <p class="hero-what rise d3">Der <b>3-Seiten-Plan als PDF</b> – kostenlos, sofort.</p>
         <div class="hero-cd rise d4"><span class="cd-big">⏳ Noch <b id="cd-chip">–</b> Tage</span><span class="cd-small" id="cd-chip-text">um die Mitarbeiter für 2027 zu finden</span></div>
         <div class="fan-wrap rise d5">
-          <div class="fan fan-float">
-            <div class="fan-tag">GRATIS</div>
-            <div class="sheet s3"></div>
-            <div class="sheet s2"></div>
-            <div class="sheet s1"><img src="assets/report-cover.jpg" alt="Der Q4-Effekt – Cover des 3-Seiten-Plans" loading="lazy"></div>
+          <div class="book-container lg">
+            <div class="book-glow"></div>
+            <div class="book-float">
+              <div class="fan-page fan-3"><svg viewBox="0 0 200 270" aria-hidden="true"><g transform="translate(18 0)"><polyline points="118,64 132,48 146,58 160,36 176,44" fill="none" stroke="rgba(22,163,74,.55)" stroke-width="3" stroke-linecap="round"/><rect x="118" y="84" width="52" height="4" rx="2" fill="#8E9A90"/><rect x="118" y="98" width="60" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="108" width="46" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="118" width="56" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="146" width="58" height="34" rx="4" fill="none" stroke="#D8D4C8" stroke-width="2"/><rect x="126" y="158" width="28" height="3" rx="1.5" fill="#C9C3B5"/><rect x="126" y="167" width="36" height="3" rx="1.5" fill="#C9C3B5"/><rect x="118" y="200" width="60" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="210" width="50" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="220" width="56" height="3" rx="1.5" fill="#DDD8CC"/></g></svg></div>
+              <div class="fan-page fan-2"><svg viewBox="0 0 200 270" aria-hidden="true"><g transform="translate(18 0)"><circle cx="146" cy="62" r="22" fill="none" stroke="#DDD8CC" stroke-width="9"/><path d="M146 40 a22 22 0 0 1 20.5 30" fill="none" stroke="rgba(22,163,74,.55)" stroke-width="9"/><rect x="118" y="100" width="56" height="4" rx="2" fill="#8E9A90"/><rect x="118" y="114" width="60" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="124" width="48" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="152" width="14" height="3" rx="1.5" fill="rgba(22,163,74,.5)"/><rect x="138" y="152" width="38" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="164" width="14" height="3" rx="1.5" fill="rgba(22,163,74,.5)"/><rect x="138" y="164" width="32" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="176" width="14" height="3" rx="1.5" fill="rgba(22,163,74,.5)"/><rect x="138" y="176" width="40" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="206" width="58" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="216" width="44" height="3" rx="1.5" fill="#DDD8CC"/></g></svg></div>
+              <div class="fan-page fan-1"><svg viewBox="0 0 200 270" aria-hidden="true"><g transform="translate(18 0)"><rect x="118" y="42" width="54" height="4" rx="2" fill="#8E9A90"/><rect x="118" y="56" width="60" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="66" width="50" height="3" rx="1.5" fill="#DDD8CC"/><rect x="122" y="128" width="10" height="34" rx="2" fill="#D8D4C8"/><rect x="136" y="112" width="10" height="50" rx="2" fill="#C9C3B5"/><rect x="150" y="96" width="10" height="66" rx="2" fill="rgba(22,163,74,.5)"/><rect x="164" y="120" width="10" height="42" rx="2" fill="#D8D4C8"/><rect x="118" y="176" width="58" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="186" width="46" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="196" width="54" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="224" width="34" height="10" rx="5" fill="rgba(22,163,74,.4)"/></g></svg></div>
+              <div class="book-seal" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><linearGradient id="sealGrad1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22C55E"/><stop offset="1" stop-color="#15803D"/></linearGradient></defs><polygon fill="url(#sealGrad1)" points="50.0,0.0 55.7,6.9 62.9,1.7 66.6,9.8 75.0,6.7 76.5,15.5 85.4,14.6 84.5,23.5 93.3,25.0 90.2,33.4 98.3,37.1 93.1,44.3 100.0,50.0 93.1,55.7 98.3,62.9 90.2,66.6 93.3,75.0 84.5,76.5 85.4,85.4 76.5,84.5 75.0,93.3 66.6,90.2 62.9,98.3 55.7,93.1 50.0,100.0 44.3,93.1 37.1,98.3 33.4,90.2 25.0,93.3 23.5,84.5 14.6,85.4 15.5,76.5 6.7,75.0 9.8,66.6 1.7,62.9 6.9,55.7 0.0,50.0 6.9,44.3 1.7,37.1 9.8,33.4 6.7,25.0 15.5,23.5 14.6,14.6 23.5,15.5 25.0,6.7 33.4,9.8 37.1,1.7 44.3,6.9"/><circle cx="50" cy="50" r="36" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.4" stroke-dasharray="2.5 3"/><text x="50" y="56" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="17.5" font-weight="800" letter-spacing=".5" fill="#fff">GRATIS</text></svg></div>
+              <div class="book">
+                <div class="book-pages-edge"></div>
+                <div class="book-cover">
+                  <div class="book-spine-edge"></div>
+                  <div class="book-top"><img class="book-logo-img" src="assets/logo-white.png" alt="GreenCareers"></div>
+                  <div class="book-title-block">
+                    <div class="book-eyebrow">3-Seiten-Plan</div>
+                    <div class="book-title">Der <i>Q4-Effekt</i></div>
+                    <div class="book-divider"></div>
+                  </div>
+                  <div class="book-bottom"><span class="book-branch">Garten- &amp;<br>Landschaftsbau</span><span class="book-pages-count">3&nbsp;Seiten</span></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -490,11 +513,27 @@
           <p class="tease-note reveal">Mit Zahlen belegt – Bundesagentur für Arbeit, BGL, Indeed Hiring Lab.</p>
         </div>
         <div class="tease-fan reveal">
-          <div class="fan fan-float">
-            <div class="fan-tag">GRATIS</div>
-            <div class="sheet s3"></div>
-            <div class="sheet s2"></div>
-            <div class="sheet s1"><img src="assets/report-cover.jpg" alt="Der Q4-Effekt – Cover des 3-Seiten-Plans" loading="lazy"></div>
+          <div class="book-container lg">
+            <div class="book-glow"></div>
+            <div class="book-float">
+              <div class="fan-page fan-3"><svg viewBox="0 0 200 270" aria-hidden="true"><g transform="translate(18 0)"><polyline points="118,64 132,48 146,58 160,36 176,44" fill="none" stroke="rgba(22,163,74,.55)" stroke-width="3" stroke-linecap="round"/><rect x="118" y="84" width="52" height="4" rx="2" fill="#8E9A90"/><rect x="118" y="98" width="60" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="108" width="46" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="118" width="56" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="146" width="58" height="34" rx="4" fill="none" stroke="#D8D4C8" stroke-width="2"/><rect x="126" y="158" width="28" height="3" rx="1.5" fill="#C9C3B5"/><rect x="126" y="167" width="36" height="3" rx="1.5" fill="#C9C3B5"/><rect x="118" y="200" width="60" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="210" width="50" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="220" width="56" height="3" rx="1.5" fill="#DDD8CC"/></g></svg></div>
+              <div class="fan-page fan-2"><svg viewBox="0 0 200 270" aria-hidden="true"><g transform="translate(18 0)"><circle cx="146" cy="62" r="22" fill="none" stroke="#DDD8CC" stroke-width="9"/><path d="M146 40 a22 22 0 0 1 20.5 30" fill="none" stroke="rgba(22,163,74,.55)" stroke-width="9"/><rect x="118" y="100" width="56" height="4" rx="2" fill="#8E9A90"/><rect x="118" y="114" width="60" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="124" width="48" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="152" width="14" height="3" rx="1.5" fill="rgba(22,163,74,.5)"/><rect x="138" y="152" width="38" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="164" width="14" height="3" rx="1.5" fill="rgba(22,163,74,.5)"/><rect x="138" y="164" width="32" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="176" width="14" height="3" rx="1.5" fill="rgba(22,163,74,.5)"/><rect x="138" y="176" width="40" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="206" width="58" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="216" width="44" height="3" rx="1.5" fill="#DDD8CC"/></g></svg></div>
+              <div class="fan-page fan-1"><svg viewBox="0 0 200 270" aria-hidden="true"><g transform="translate(18 0)"><rect x="118" y="42" width="54" height="4" rx="2" fill="#8E9A90"/><rect x="118" y="56" width="60" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="66" width="50" height="3" rx="1.5" fill="#DDD8CC"/><rect x="122" y="128" width="10" height="34" rx="2" fill="#D8D4C8"/><rect x="136" y="112" width="10" height="50" rx="2" fill="#C9C3B5"/><rect x="150" y="96" width="10" height="66" rx="2" fill="rgba(22,163,74,.5)"/><rect x="164" y="120" width="10" height="42" rx="2" fill="#D8D4C8"/><rect x="118" y="176" width="58" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="186" width="46" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="196" width="54" height="3" rx="1.5" fill="#DDD8CC"/><rect x="118" y="224" width="34" height="10" rx="5" fill="rgba(22,163,74,.4)"/></g></svg></div>
+              <div class="book-seal" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><linearGradient id="sealGrad2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22C55E"/><stop offset="1" stop-color="#15803D"/></linearGradient></defs><polygon fill="url(#sealGrad2)" points="50.0,0.0 55.7,6.9 62.9,1.7 66.6,9.8 75.0,6.7 76.5,15.5 85.4,14.6 84.5,23.5 93.3,25.0 90.2,33.4 98.3,37.1 93.1,44.3 100.0,50.0 93.1,55.7 98.3,62.9 90.2,66.6 93.3,75.0 84.5,76.5 85.4,85.4 76.5,84.5 75.0,93.3 66.6,90.2 62.9,98.3 55.7,93.1 50.0,100.0 44.3,93.1 37.1,98.3 33.4,90.2 25.0,93.3 23.5,84.5 14.6,85.4 15.5,76.5 6.7,75.0 9.8,66.6 1.7,62.9 6.9,55.7 0.0,50.0 6.9,44.3 1.7,37.1 9.8,33.4 6.7,25.0 15.5,23.5 14.6,14.6 23.5,15.5 25.0,6.7 33.4,9.8 37.1,1.7 44.3,6.9"/><circle cx="50" cy="50" r="36" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.4" stroke-dasharray="2.5 3"/><text x="50" y="56" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="17.5" font-weight="800" letter-spacing=".5" fill="#fff">GRATIS</text></svg></div>
+              <div class="book">
+                <div class="book-pages-edge"></div>
+                <div class="book-cover">
+                  <div class="book-spine-edge"></div>
+                  <div class="book-top"><img class="book-logo-img" src="assets/logo-white.png" alt="GreenCareers"></div>
+                  <div class="book-title-block">
+                    <div class="book-eyebrow">3-Seiten-Plan</div>
+                    <div class="book-title">Der <i>Q4-Effekt</i></div>
+                    <div class="book-divider"></div>
+                  </div>
+                  <div class="book-bottom"><span class="book-branch">Garten- &amp;<br>Landschaftsbau</span><span class="book-pages-count">3&nbsp;Seiten</span></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
